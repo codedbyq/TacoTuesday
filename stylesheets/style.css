@@ -1,0 +1,17 @@
+body {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family:'Baloo Da 2', cursive;
+    background-color: black;
+    background-image: url('../assets/chili_background.jpg');
+    overflow: scroll;
+}
+
+#title {
+    font-family: 'Permanent Marker', cursive;
+}
