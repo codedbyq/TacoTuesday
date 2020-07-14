@@ -10,9 +10,10 @@ body {
     background-color: black;
     background-image: url('../assets/chili_background.jpg');
     overflow: scroll;
+    padding: 30px;
 }
 
-#title, #inline-title {
+#title, #inline-title, #main-title {
     font-family: 'Permanent Marker', cursive;
     color: rgb(223, 89, 89);
 }
@@ -23,6 +24,12 @@ body {
 
 #inline-title {
     font-size: 24px;
+}
+
+#main-title {
+    font-size: 76px;
+    margin: 10px 0px;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 .hidden {
@@ -76,9 +83,56 @@ body {
     font-size: 20px;
 }
 
-
 .start-game:hover {
     background-color: rgb(63, 128, 53);
     top: -5px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.game-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 927px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    background: rgb(139,94,60);
+    background: linear-gradient(0deg, rgba(139,94,60,1) 0%, rgba(139,94,60,1) 33%, rgba(252,176,69,1) 35%, rgba(253,29,29,1) 64%, rgba(57,7,150,1) 100%);
+}
+
+.canvas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 700px;
+    width: 100%;
+    max-width: 927px;
+    border: 15px solid rgb(84, 169, 71);
+    border-radius: 10px;
+    background-image: url('../assets/taco_truck.png');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid white;
+    width: 100%;
+    height: 75px;
+}
+
+.kitchen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+    width: 100%;
+    height: 160px;
+    background-color: rgb(84, 169, 71);
 }
