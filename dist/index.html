@@ -3,13 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/tacos.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../stylesheets/reset.css">
     <link rel="stylesheet" href="../stylesheets/style.css">
     <title>Taco Tuesday</title>
 </head>
+
 <body>
-    <h1 id='title'>Taco Tuesday 🌮</h1>
-    <p>Everything is up and running properly</p>
+    <!-- <div class="intro">
+        <div class="intro-content">
+            <h1 id="title">Taco Tuesday</h1>
+            <div class="description">
+                <p>
+                    <span id="inline-title">It's Taco Tuuuuuesday!</span> Taco Tuesday
+                    is a food-themed matching game where you will take the role of
+                    a chef running their own taco truck. Get ready as you take on
+                    orders from hungry customers. The people love their tacos so be
+                    sure that you don't keep 'em waiting!
+                </p>
+            </div>
+
+            <button class="start-game">START GAME</button>
+        </div>
+    </div> -->
+
+    <div class="game-content">
+        <div class="canvas">
+            <div class="game-stats">
+                <div id="timer"></div>
+                <div id="score"></div>
+                <div id="strikes"></div>
+            </div>
+
+            <div class="kitchen">
+                <div class="taco"></div>
+
+                <div id="remove-btn"></div>
+
+                <div class="menu-row">
+                    <div id="tomato" class="menu-item"></div>
+                    <div id="avacado" class="menu-item"></div>
+                    <div id="onion" class="menu-item"></div>
+                    <div id="beans" class="menu-item"></div>
+                </div>
+                <div class="menu-row">
+                    <div id="cheese" class="menu-item"></div>
+                    <div id="pepper" class="menu-item"></div>
+                    <div id="steak" class="menu-item"></div>
+                    <div id="pork" class="menu-item"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./tacotuesday.js" type="application/javascript"></script>
+
 </body>
 </html>
