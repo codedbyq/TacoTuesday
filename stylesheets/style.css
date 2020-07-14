@@ -138,7 +138,15 @@ body {
     background-color: rgb(84, 169, 71);
 }
 
-
+.taco-container {
+    height: 200px;
+    width: 265px;
+    border: 1px solid white;
+    background-image: url('../assets/tortilla.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
 
 .menu {
     display: flex;
