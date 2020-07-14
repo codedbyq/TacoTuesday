@@ -32,6 +32,11 @@ body {
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
+footer {
+    font-size: 20px;
+    margin: 15px;
+}
+
 .hidden {
     display: none;
 }
@@ -96,7 +101,7 @@ body {
     height: 100%;
     width: 100%;
     max-width: 927px;
-    min-width: 600px;
+    min-width: 760px;
     border-radius: 12px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
     background: rgb(139,94,60);
@@ -110,7 +115,7 @@ body {
     height: 700px;
     width: 100%;
     max-width: 927px;
-    min-width: 600px;
+    min-width: 760px;
     border: 15px solid rgb(84, 169, 71);
     border-radius: 10px;
     background-image: url('../assets/taco_truck.png');
@@ -140,7 +145,7 @@ body {
 
 .taco-container {
     height: 200px;
-    width: 265px;
+    width: 340px;
     border: 1px solid white;
     background-image: url('../assets/tortilla.png');
     background-repeat: no-repeat;
