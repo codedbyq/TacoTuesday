@@ -8,3 +8,5 @@ export const ORDER_ITEMS = {
     'steak': '../assets/ingredients/steak.png',
     'tomato': '../assets/ingredients/tomato.png',
 };
+
+export const
