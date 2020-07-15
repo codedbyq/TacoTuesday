@@ -9,4 +9,6 @@ export const ORDER_ITEMS = {
     'tomato': '../assets/ingredients/tomato.png',
 };
 
-export const
+export const CUSTOMERS = {
+    1: '../assets/characters/blue'
+}
