@@ -16,11 +16,11 @@ export class Ingredient {
         this.imageURL = imageURL;
     }
 
-    //assign an image sprite to the ingredient
+    // return an image sprite for the ingredient
     render() {
         const img = document.createElement("img");
         img.src = this.imageURL;
-        img.alt = `${this.key}-thumbnail`;
+        img.alt = `${this.key}`;
         return img;
     }
 }
