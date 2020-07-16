@@ -28,6 +28,8 @@ export class Order {
         this.renderOrder();
     }
 
+    // given the order size, select ingredients at random to create a customer's
+    // order
     generateOrder() {
         const options = Object.keys(OPTIONS);
         const numOptions = options.length;
@@ -39,6 +41,7 @@ export class Order {
         }
     }
 
+    // generate a random customer
     generateCustomer() {
         const idx = Math.floor(Math.random() * 5);
         const img = document.createElement('img');
@@ -48,6 +51,7 @@ export class Order {
         container.appendChild(img);
     }
 
+    // attach an icon to the corresponding ingredient
     generateIngredient(key) {
         const img = document.createElement('img');
         img.scr = OPTIONS[key];
@@ -55,6 +59,7 @@ export class Order {
         return img;
     }
 
+    // display the customer and the order on the canvas
     renderOrder() {
         const order = document.createElement('div');
         order.classList.add('order-container');
@@ -71,6 +76,7 @@ export class Order {
         speechBubble.appendChild(order);
     }
 
+    // remove the customer and speech bubble from the canvas
     deleteOrder() {
         document.querySelector('.speech-container').innerHTML = '';
         document.querySelector('.customer-container').innerHTML = '';
