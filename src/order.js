@@ -33,7 +33,46 @@ export class Order {
         const numOptions = options.length;
 
         for (i = 1; i <= this.numItems; i++) {
-            const idx = Math.floor(Math.random() * 5)
+            const idx = Math.floor(Math.random() * 5);
+            const random = options[idx];
+            this.order.push(random);
         }
+    }
+
+    generateCustomer() {
+        const idx = Math.floor(Math.random() * 5);
+        const img = document.createElement('img');
+        img.src = CUSTOMERS[idx];
+        img.alt = 'customer';
+        const container = document.querySelector('.customer-container');
+        container.appendChild(img);
+    }
+
+    generateIngredient(key) {
+        const img = document.createElement('img');
+        img.scr = OPTIONS[key];
+        img.alt = `${key}`;
+        return img;
+    }
+
+    renderOrder() {
+        const order = document.createElement('div');
+        order.classList.add('order-container');
+        order.classList.add(`box-${this.numOptions}`);
+        order.classList.add('fadeIn');
+
+        this.order.forEach(item => {
+            const orderItem = document.createElement('div');
+            orderItem.classList.add('order-item');
+            orderItem.appendChild(this.generateIngredient(item));
+            order.appendChild(orderItem);
+        });
+        const speechBubble = document.querySelector('.speech-container');
+        speechBubble.appendChild(order);
+    }
+
+    deleteOrder() {
+        document.querySelector('.speech-container').innerHTML = '';
+        document.querySelector('.customer-container').innerHTML = '';
     }
 }
