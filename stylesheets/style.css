@@ -32,6 +32,44 @@ body {
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
+.nav-links {
+    display: inline-flex;
+    justify-content: space-between;
+    height: 53px;
+    width: 250px;
+}
+
+.github, .linkedin, .volume-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: transparent;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.github:hover, .linkedin:hover, .volume-btn:hover {
+    height: 53px;
+    width: 53px;
+}
+
+.github {
+    background-image: url('../assets/icons/icons8-github-48-2.png');
+}
+
+.linkedin {
+    background-image: url('../assets/icons/icons8-linkedin-2-60.png');
+}
+
+.volume-btn {
+    background-image: url('../assets/icons/icons8-audio-48.png');
+}
+
 footer {
     font-size: 20px;
     margin: 15px;
@@ -83,13 +121,13 @@ footer {
     width: 100%;
     border: none;
     border-radius: 10px;
-    background-color: rgb(84, 169, 71);
+    background-color: #54a947;
     color: white;
     font-size: 20px;
 }
 
 .start-game:hover {
-    background-color: rgb(63, 128, 53);
+    background-color: #3f8035;
     top: -5px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
 }
@@ -100,7 +138,7 @@ footer {
     align-items: center;
     height: 100%;
     width: 100%;
-    max-width: 927px;
+    max-width: 837px;
     min-width: 760px;
     border-radius: 12px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
@@ -114,7 +152,7 @@ footer {
     justify-content: space-between;
     height: 700px;
     width: 100%;
-    max-width: 927px;
+    max-width: 837px;
     min-width: 760px;
     border: 15px solid rgb(84, 169, 71);
     border-radius: 10px;
@@ -131,6 +169,33 @@ footer {
     border: 1px solid white;
     width: 70%;
     height: 75px;
+}
+
+.animation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 340px;
+    width: 85%;
+    margin-top: 115px;
+    border: 1px solid white;
+}
+
+.speech-container {
+    border: 1px solid white;
+    height: 140px;
+    width: 300px;
+    margin-left: auto;
+}
+
+.customer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid black;
+    height: 140px;
+    width: 140px;
 }
 
 .kitchen {
@@ -181,7 +246,7 @@ footer {
     border-radius: 8px;
 }
 
-.menu-item:hover, .bento-item:hover, .hover, button:hover {
+.github:hover, .linkedin:hover, .menu-item:hover, .bento-item:hover, .hover, button:hover {
     top: -5px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
 }
