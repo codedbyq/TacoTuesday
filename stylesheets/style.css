@@ -165,11 +165,27 @@ footer {
 
 .game-stats {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    border: 1px solid white;
     width: 70%;
-    height: 75px;
+    height: 80px;
+    font-size: 40px;
+    font-family: 'Permanent Marker', cursive;
+    color: red;
+    padding: 4px 40px;
+}
+
+#timer {
+    width: 20px;
+}
+
+#score {
+    width: 150px;
+    color: green;
+}
+
+#strikes {
+    width: 100px;
 }
 
 .animation {

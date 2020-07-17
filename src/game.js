@@ -39,6 +39,7 @@ class Game {
         this.addMenuListener();
         this.addUndoListener();
         this.startTimer();
+        this.renderScore();
     }
 
     // listen for one of the ingredients to be clicked, when one of them is
@@ -145,7 +146,6 @@ class Game {
     nextRound() {
         const duration = this.orderSize === 4 ? 7 : 9;
         this.order = new Order(this.orderSize, duration);
-        this.order = new Order(this.orderSize);
         this.taco = new Taco(this.orderSize, this.order);
         this.timer = new Timer(this.order.duration, this.updateGame);
         this.startTimer();

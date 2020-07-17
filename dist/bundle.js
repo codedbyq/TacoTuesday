@@ -149,6 +149,7 @@ var Game = /*#__PURE__*/function () {
       this.addMenuListener();
       this.addUndoListener();
       this.startTimer();
+      this.renderScore();
     } // listen for one of the ingredients to be clicked, when one of them is
     // then add the clicked ingredient to the taco
 
@@ -271,7 +272,6 @@ var Game = /*#__PURE__*/function () {
     value: function nextRound() {
       var duration = this.orderSize === 4 ? 7 : 9;
       this.order = new _order__WEBPACK_IMPORTED_MODULE_0__["Order"](this.orderSize, duration);
-      this.order = new _order__WEBPACK_IMPORTED_MODULE_0__["Order"](this.orderSize);
       this.taco = new _taco__WEBPACK_IMPORTED_MODULE_3__["default"](this.orderSize, this.order);
       this.timer = new _timer__WEBPACK_IMPORTED_MODULE_2__["default"](this.order.duration, this.updateGame);
       this.startTimer();
