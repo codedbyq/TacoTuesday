@@ -3,7 +3,7 @@ export const OPTIONS = {
     'beans': '../assets/ingredients/beans.png',
     'cheese': '../assets/ingredients/cheese.png',
     'ham': '../assets/ingredients/ham.png',
-    'onion': '../assets/ingredients/onion.png',
+    'onion': '../assets/ingredients/onions.png',
     'pepper': '../assets/ingredients/pepper.png',
     'steak': '../assets/ingredients/steak.png',
     'tomato': '../assets/ingredients/tomato.png',
