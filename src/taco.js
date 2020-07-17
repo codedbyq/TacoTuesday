@@ -8,21 +8,19 @@ class Taco {
         this.generateTaco();
     }
 
+    // fill a container with 2 rows that will hold the number of ingredients based
+    // on the order size, the images will be added later
     generateTaco() {
         const container = document.querySelector('.taco-container');
-        const taco = document.createElement('div');
         const topRow = document.createElement('div');
         const bottomRow = document.createElement('div');
         bottomRow.classList.add('taco-row');
         topRow.classList.add('taco-row');
-        taco.id = 'taco';
 
         if (this.orderSize < 6) {
-            taco.classList.add('taco-small');
             topRow.id = 'taco-row-small'
             bottomRow.id = 'taco-row-small'
         } else {
-            taco.classList.add('taco-large');
             topRow.id = "taco-row-large";
             bottomRow.id = "taco-row-large";
         };

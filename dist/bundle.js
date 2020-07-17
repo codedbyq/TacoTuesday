@@ -499,8 +499,8 @@ var Order = /*#__PURE__*/function () {
       var options = Object.keys(OPTIONS);
       var numOptions = options.length;
 
-      for (var i = 1; i <= this.numItems; i++) {
-        var idx = Math.floor(Math.random() * 5);
+      for (var i = 0; i < this.orderSize; i++) {
+        var idx = Math.floor(Math.random() * numOptions);
         var random = options[idx];
         this.order.push(random);
       }
@@ -531,7 +531,7 @@ var Order = /*#__PURE__*/function () {
     key: "generateIngredient",
     value: function generateIngredient(key) {
       var img = document.createElement('img');
-      img.scr = OPTIONS[key];
+      img.src = OPTIONS[key];
       img.alt = "".concat(key);
       return img;
     } // display the customer and the order on the canvas
@@ -539,20 +539,48 @@ var Order = /*#__PURE__*/function () {
   }, {
     key: "renderOrder",
     value: function renderOrder() {
-      var _this = this;
-
+      var speechBubble = document.querySelector('.speech-bubble');
       var order = document.createElement('div');
+      var topRow = document.createElement('div');
+      var bottomRow = document.createElement('div');
+      topRow.classList.add('order-row');
+      bottomRow.classList.add('order-row');
       order.classList.add('order-container');
-      order.classList.add("box-".concat(this.orderSize));
       order.classList.add('fadeIn');
-      this.order.forEach(function (item) {
+
+      if (this.orderSize < 6) {
+        topRow.id = 'order-row-small';
+        bottomRow.id = 'order-row-small';
+      } else {
+        topRow.id = "order-row-large";
+        bottomRow.id = "order-row-large";
+      }
+
+      ;
+
+      for (var i = 0; i < this.orderSize / 2; i++) {
+        var orderIngredient = this.order[i];
         var ingredient = document.createElement('div');
         ingredient.classList.add('order-ingredient');
-        ingredient.appendChild(_this.generateIngredient(ingredient));
-        order.appendChild(ingredient);
-      });
-      var speechContainer = document.querySelector('.speech-container');
-      speechContainer.appendChild(order);
+        ingredient.appendChild(this.generateIngredient(orderIngredient));
+        topRow.appendChild(ingredient);
+      }
+
+      for (var _i = this.orderSize / 2; _i < this.orderSize; _i++) {
+        var _orderIngredient = this.order[_i];
+
+        var _ingredient = document.createElement('div');
+
+        _ingredient.classList.add('order-ingredient');
+
+        _ingredient.appendChild(this.generateIngredient(_orderIngredient));
+
+        bottomRow.appendChild(_ingredient);
+      }
+
+      order.appendChild(topRow);
+      order.appendChild(bottomRow);
+      speechBubble.appendChild(order);
     } // remove the customer and speech bubble from the canvas
 
   }, {
@@ -594,25 +622,23 @@ var Taco = /*#__PURE__*/function () {
     this.order = order;
     this.taco = [];
     this.generateTaco();
-  }
+  } // fill a container with 2 rows that will hold the number of ingredients based
+  // on the order size, the images will be added later
+
 
   _createClass(Taco, [{
     key: "generateTaco",
     value: function generateTaco() {
       var container = document.querySelector('.taco-container');
-      var taco = document.createElement('div');
       var topRow = document.createElement('div');
       var bottomRow = document.createElement('div');
       bottomRow.classList.add('taco-row');
       topRow.classList.add('taco-row');
-      taco.id = 'taco';
 
       if (this.orderSize < 6) {
-        taco.classList.add('taco-small');
         topRow.id = 'taco-row-small';
         bottomRow.id = 'taco-row-small';
       } else {
-        taco.classList.add('taco-large');
         topRow.id = "taco-row-large";
         bottomRow.id = "taco-row-large";
       }

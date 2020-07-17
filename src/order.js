@@ -34,8 +34,8 @@ export class Order {
         const options = Object.keys(OPTIONS);
         const numOptions = options.length;
 
-        for (let i = 1; i <= this.numItems; i++) {
-            const idx = Math.floor(Math.random() * 5);
+        for (let i = 0; i < this.orderSize; i++) {
+            const idx = Math.floor(Math.random() * numOptions);
             const random = options[idx];
             this.order.push(random);
         }
@@ -65,26 +65,48 @@ export class Order {
     // attach an icon to the corresponding ingredient
     generateIngredient(key) {
         const img = document.createElement('img');
-        img.scr = OPTIONS[key];
+        img.src = OPTIONS[key];
         img.alt = `${key}`;
         return img;
     }
 
     // display the customer and the order on the canvas
     renderOrder() {
+        const speechBubble = document.querySelector('.speech-bubble');
         const order = document.createElement('div');
+        const topRow = document.createElement('div');
+        const bottomRow = document.createElement('div');
+        topRow.classList.add('order-row');
+        bottomRow.classList.add('order-row');
         order.classList.add('order-container');
-        order.classList.add(`box-${this.orderSize}`);
         order.classList.add('fadeIn');
 
-        this.order.forEach(item => {
+        if (this.orderSize < 6) {
+            topRow.id = 'order-row-small'
+            bottomRow.id = 'order-row-small'
+        } else {
+            topRow.id = "order-row-large";
+            bottomRow.id = "order-row-large";
+        };
+
+        for (let i = 0; i < (this.orderSize / 2); i++) {
+            const orderIngredient = this.order[i];
             const ingredient = document.createElement('div');
             ingredient.classList.add('order-ingredient');
-            ingredient.appendChild(this.generateIngredient(ingredient));
-            order.appendChild(ingredient);
-        });
-        const speechContainer = document.querySelector('.speech-container');
-        speechContainer.appendChild(order);
+            ingredient.appendChild(this.generateIngredient(orderIngredient));
+            topRow.appendChild(ingredient);
+        }
+        for (let i = this.orderSize / 2; i < this.orderSize; i++) {
+            const orderIngredient = this.order[i];
+            const ingredient = document.createElement('div');
+            ingredient.classList.add('order-ingredient');
+            ingredient.appendChild(this.generateIngredient(orderIngredient));
+            bottomRow.appendChild(ingredient);
+        }
+
+        order.appendChild(topRow);
+        order.appendChild(bottomRow);
+        speechBubble.appendChild(order);
     }
 
     // remove the customer and speech bubble from the canvas
