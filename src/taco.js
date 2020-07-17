@@ -20,28 +20,28 @@ class Taco {
         };
 
         for (let i = 1; i <= this.orderSize; i++) {
-            const tacoItem = document.createElement('div');
-            tacoItem.classList.add('taco-item');
-            tacoItem.classList.add(`${i}`);
-            taco.appendChild(tacoItem);
+            const tacoIngredient = document.createElement('div');
+            tacoIngredient.classList.add('taco-ingredient');
+            tacoIngredient.classList.add(`${i}`);
+            taco.appendChild(tacoIngredient);
         }
 
         container.appendChild(taco);
     }
 
     // reset the taco back to an empty container
-    resetTaco() {
+    clearTaco() {
         document.getElementById('taco-container').innerHTML = '';
     }
 
     // add a given ingredient to the taco
-    addItem(ingredient) {
+    addIngredient(ingredient) {
         this.taco.push(ingredient);
         this.render();
     }
 
     // when the undo buttom is triggered remove the last ingredient on the taco
-    removeItem() {
+    removeIngredient() {
         this.taco.pop();
         this.render();
     }

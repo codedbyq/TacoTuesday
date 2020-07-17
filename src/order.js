@@ -77,7 +77,7 @@ export class Order {
     }
 
     // remove the customer and speech bubble from the canvas
-    deleteOrder() {
+    clearOrder() {
         document.querySelector('.speech-container').innerHTML = '';
         document.querySelector('.customer-container').innerHTML = '';
     }

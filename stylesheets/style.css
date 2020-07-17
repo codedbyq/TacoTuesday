@@ -79,7 +79,7 @@ footer {
     display: none;
 }
 
-.modal, .intro {
+#modal, #intro {
     z-index: 10px;
     position: fixed;
     top: 0;
