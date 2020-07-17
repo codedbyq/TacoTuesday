@@ -11,22 +11,38 @@ class Taco {
     generateTaco() {
         const container = document.querySelector('.taco-container');
         const taco = document.createElement('div');
+        const topRow = document.createElement('div');
+        const bottomRow = document.createElement('div');
+        bottomRow.classList.add('taco-row');
+        topRow.classList.add('taco-row');
         taco.id = 'taco';
 
         if (this.orderSize < 6) {
             taco.classList.add('taco-small');
+            topRow.id = 'taco-row-small'
+            bottomRow.id = 'taco-row-small'
         } else {
             taco.classList.add('taco-large');
+            topRow.id = "taco-row-large";
+            bottomRow.id = "taco-row-large";
         };
 
-        for (let i = 1; i <= this.orderSize; i++) {
-            const tacoIngredient = document.createElement('div');
-            tacoIngredient.classList.add('taco-ingredient');
-            tacoIngredient.classList.add(`${i}`);
-            taco.appendChild(tacoIngredient);
+        for (let i = 0; i < (this.orderSize / 2); i++) {
+          const tacoIngredient = document.createElement("div");
+          tacoIngredient.classList.add("taco-ingredient");
+          tacoIngredient.classList.add(`${i}`);
+          topRow.appendChild(tacoIngredient);
         }
+        for (let i = this.orderSize / 2; i < this.orderSize; i++) {
+          const tacoIngredient = document.createElement("div");
+          tacoIngredient.classList.add("taco-ingredient");
+          tacoIngredient.classList.add(`${i}`);
+          bottomRow.appendChild(tacoIngredient);
+        }
+        
 
-        container.appendChild(taco);
+        container.appendChild(topRow);
+        container.appendChild(bottomRow);
     }
 
     // reset the taco back to an empty container
@@ -49,16 +65,16 @@ class Taco {
     // iterate through the taco and attach the proper image to the corresponding
     // ingredient
     render() {
-        for (i = 1; i <= this.orderSize; i++) {
-            const tacoItem = document.getElementsByClassName(`taco-item ${i}`)[0];
-            tacoItem.innerHTML = '';
-            const item = this.bento[i - 1];
+        for (let i = 0; i < this.orderSize; i++) {
+            const tacoIngredient = document.getElementsByClassName(`taco-ingredient ${i}`)[0];
+            tacoIngredient.innerHTML = '';
+            const ingredient = this.taco[i];
 
-            if (!item) break;
+            if (!ingredient) break;
             const img = document.createElement('img');
-            img.src = OPTIONS[item];
-            img.alt = `${item}`;
-            tacoItem.appendChild(img);
+            img.src = OPTIONS[ingredient];
+            img.alt = `${ingredient}`;
+            tacoIngredient.appendChild(img);
         }
     }
 }

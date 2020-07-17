@@ -543,13 +543,13 @@ var Order = /*#__PURE__*/function () {
 
       var order = document.createElement('div');
       order.classList.add('order-container');
-      order.classList.add("box-".concat(this.numOptions));
+      order.classList.add("box-".concat(this.orderSize));
       order.classList.add('fadeIn');
       this.order.forEach(function (item) {
-        var orderItem = document.createElement('div');
-        orderItem.classList.add('order-item');
-        orderItem.appendChild(_this.generateIngredient(item));
-        order.appendChild(orderItem);
+        var ingredient = document.createElement('div');
+        ingredient.classList.add('order-ingredient');
+        ingredient.appendChild(_this.generateIngredient(ingredient));
+        order.appendChild(ingredient);
       });
       var speechContainer = document.querySelector('.speech-container');
       speechContainer.appendChild(order);
@@ -601,24 +601,43 @@ var Taco = /*#__PURE__*/function () {
     value: function generateTaco() {
       var container = document.querySelector('.taco-container');
       var taco = document.createElement('div');
+      var topRow = document.createElement('div');
+      var bottomRow = document.createElement('div');
+      bottomRow.classList.add('taco-row');
+      topRow.classList.add('taco-row');
       taco.id = 'taco';
 
       if (this.orderSize < 6) {
         taco.classList.add('taco-small');
+        topRow.id = 'taco-row-small';
+        bottomRow.id = 'taco-row-small';
       } else {
         taco.classList.add('taco-large');
+        topRow.id = "taco-row-large";
+        bottomRow.id = "taco-row-large";
       }
 
       ;
 
-      for (var _i = 1; _i <= this.orderSize; _i++) {
-        var tacoIngredient = document.createElement('div');
-        tacoIngredient.classList.add('taco-ingredient');
-        tacoIngredient.classList.add("".concat(_i));
-        taco.appendChild(tacoIngredient);
+      for (var i = 0; i < this.orderSize / 2; i++) {
+        var tacoIngredient = document.createElement("div");
+        tacoIngredient.classList.add("taco-ingredient");
+        tacoIngredient.classList.add("".concat(i));
+        topRow.appendChild(tacoIngredient);
       }
 
-      container.appendChild(taco);
+      for (var _i = this.orderSize / 2; _i < this.orderSize; _i++) {
+        var _tacoIngredient = document.createElement("div");
+
+        _tacoIngredient.classList.add("taco-ingredient");
+
+        _tacoIngredient.classList.add("".concat(_i));
+
+        bottomRow.appendChild(_tacoIngredient);
+      }
+
+      container.appendChild(topRow);
+      container.appendChild(bottomRow);
     } // reset the taco back to an empty container
 
   }, {
@@ -645,15 +664,15 @@ var Taco = /*#__PURE__*/function () {
   }, {
     key: "render",
     value: function render() {
-      for (i = 1; i <= this.orderSize; i++) {
-        var tacoItem = document.getElementsByClassName("taco-item ".concat(i))[0];
-        tacoItem.innerHTML = '';
-        var item = this.bento[i - 1];
-        if (!item) break;
+      for (var i = 0; i < this.orderSize; i++) {
+        var tacoIngredient = document.getElementsByClassName("taco-ingredient ".concat(i))[0];
+        tacoIngredient.innerHTML = '';
+        var ingredient = this.taco[i];
+        if (!ingredient) break;
         var img = document.createElement('img');
-        img.src = _order__WEBPACK_IMPORTED_MODULE_0__["OPTIONS"][item];
-        img.alt = "".concat(item);
-        tacoItem.appendChild(img);
+        img.src = _order__WEBPACK_IMPORTED_MODULE_0__["OPTIONS"][ingredient];
+        img.alt = "".concat(ingredient);
+        tacoIngredient.appendChild(img);
       }
     }
   }]);

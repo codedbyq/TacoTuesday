@@ -74,14 +74,14 @@ export class Order {
     renderOrder() {
         const order = document.createElement('div');
         order.classList.add('order-container');
-        order.classList.add(`box-${this.numOptions}`);
+        order.classList.add(`box-${this.orderSize}`);
         order.classList.add('fadeIn');
 
         this.order.forEach(item => {
-            const orderItem = document.createElement('div');
-            orderItem.classList.add('order-item');
-            orderItem.appendChild(this.generateIngredient(item));
-            order.appendChild(orderItem);
+            const ingredient = document.createElement('div');
+            ingredient.classList.add('order-ingredient');
+            ingredient.appendChild(this.generateIngredient(ingredient));
+            order.appendChild(ingredient);
         });
         const speechContainer = document.querySelector('.speech-container');
         speechContainer.appendChild(order);
