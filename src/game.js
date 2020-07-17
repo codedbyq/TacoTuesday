@@ -166,6 +166,7 @@ class Game {
         this.renderScore();
         this.order.clearOrder();
         this.taco.clearTaco();
+        this.timer.remove()
 
         document.getElementById('modal').classList.add('hidden');
         this.nextRound();
@@ -181,31 +182,28 @@ class Game {
     renderFinalScore() {
         clearInterval(this.levelUp);
         const message = document.querySelector('.modal-message');
-        const ranking = document.querySelector('.rank');
-        const finalScore = `$${this.score}`;
+        const ranking = document.querySelector('.ranking');
         let rank;
 
-        switch (true) {
-            case finalScore >= 300:
-                rank = 'GOAT'
-                break;
-            case finalScore >= 200:
-                rank = 'Hall of Fame'
-                break;
-            case finalScore >= 100:
-                rank = 'Superstar'
-                break;
-            case finalScore >= 0:
-                rank = 'Rookie'
-                break;
-            
-            // case finalScore === 0:
+        if (this.score >= 300) {
+            rank = 'GOAT';
+        } else if (this.score >= 200) {
+            rank = 'Hall of Fame';
+        } else if (this.score >= 100) {
+            rank = 'Superstar';
+        } else if (this.score >= 50) {
+            rank = 'All-Star'
+        } else if (this.score >= 0) {
+            rank = 'Rookie';
+        }
+        
+            // case this.score === 0:
             //     const img = document.createElement('img');
             //     img.src = '../assets/'
             //     break;
-        }
+        
 
-        message.innerHTML = `You made ${finalScore}!`;
+        message.innerHTML = `You made $${this.score}.00!`;
         ranking.innerHTML = `Rank: ${rank}`;
         const modal = document.getElementById('modal');
         modal.classList.remove('hidden');
