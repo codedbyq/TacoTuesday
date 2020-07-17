@@ -12,29 +12,41 @@
 </head>
 
 <body>
+    <audio>
+        <source src="../assets/background_music.mp3" type='audio/mp3'> 
+        
+    </audio>
     <div id="intro">
         <div class="intro-content">
             <h1 id="title">Taco Tuesday</h1>
-            <div class="description">
-                <p>
-                    <span id="inline-title">It's Taco Tuuuuuesday!</span> Taco Tuesday
-                    is a food-themed matching game where you will take the role of
-                    a chef running their own taco truck. Get ready as you take on
-                    orders from hungry customers. The people love their tacos so be
-                    sure that you don't keep 'em waiting!
-                </p>
-            </div>
+            <section class="middle-section" >
+                <img id='bron' src="../assets/lebron_right.png">
+
+                <div class="description">
+                    <p>
+                        <span id="inline-title">It's Taco Tuuuuuesday!</span> Taco Tuesday
+                        is a food-themed matching game where you will take the role of
+                        a chef running their own taco truck. Get ready as you take on
+                        orders from hungry customers. The people love their tacos so be
+                        sure that you don't keep 'em waiting!
+                    </p>
+                </div>
+            </section>
 
             <button class="start-btn">START GAME</button>
         </div>
     </div>
 
-    <div id='modal' class="hidden">
-        <div class="modal-screen"></div>
-        <div class="modal-content">
-            <div class="modal-message"></div>
-            <div>
-                <p class="ranking"></p>
+    <div id='gameover' class="hidden">
+        <div class="gameover-content">
+            <h1 id="title">Game Over</h1>
+            <div class="rank-container">
+                <div class="ranking">
+                    <div class="final-score"></div>
+                    <label class="rank-label">Rank:</label> 
+                    <p class="rank"></p>
+                </div>
+                <img class="gameover-bron" src=''></img>
             </div>
             <button class="restart-btn">PLAY AGAIN</button>
         </div>

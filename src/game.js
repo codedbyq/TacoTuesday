@@ -8,7 +8,7 @@ class Game {
         // class instances
         this.menu = new Menu();
         this.orderSize = this.generateOrderSize();
-        const duration = this.orderSize === 4 ? 15 : 15; 
+        const duration = this.orderSize === 4 ? 5 : 5; 
         this.order = new Order(this.orderSize, duration);
         this.taco = new Taco(this.orderSize, this.order);
 
@@ -168,7 +168,7 @@ class Game {
         this.taco.clearTaco();
         this.timer.remove()
 
-        document.getElementById('modal').classList.add('hidden');
+        document.getElementById('gameover').classList.add('hidden');
         this.nextRound();
     }
 
@@ -181,32 +181,29 @@ class Game {
     // on their score
     renderFinalScore() {
         clearInterval(this.levelUp);
-        const message = document.querySelector('.modal-message');
-        const ranking = document.querySelector('.ranking');
-        let rank;
+        const finalScore = document.querySelector('.final-score');
+        const img = document.querySelector(".gameover-bron")
+        const rank = document.querySelector('.rank');
+        img.src = '../assets/bron-head.png';
 
         if (this.score >= 300) {
-            rank = 'GOAT';
+            rank.innerText = 'GOAT';
         } else if (this.score >= 200) {
-            rank = 'Hall of Fame';
+            rank.innerText = 'Hall of Fame';
         } else if (this.score >= 100) {
-            rank = 'Superstar';
+            rank.innerText = 'Superstar';
         } else if (this.score >= 50) {
-            rank = 'All-Star'
-        } else if (this.score >= 0) {
-            rank = 'Rookie';
+            rank.innerText = 'All-Star'
+        } else if (this.score > 0) {
+            rank.innerText = 'Rookie';
+        } else if (this.score === 0) {
+            rank.innerText = 'Bruh';
+            img.src = "../assets/game-over-bron.png";
         }
         
-            // case this.score === 0:
-            //     const img = document.createElement('img');
-            //     img.src = '../assets/'
-            //     break;
-        
-
-        message.innerHTML = `You made $${this.score}.00!`;
-        ranking.innerHTML = `Rank: ${rank}`;
-        const modal = document.getElementById('modal');
-        modal.classList.remove('hidden');
+        finalScore.innerHTML = `You made $${this.score}!`;
+        const gameover = document.getElementById('gameover');
+        gameover.classList.remove('hidden');
     }
 }
 

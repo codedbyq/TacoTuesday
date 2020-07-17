@@ -117,7 +117,7 @@ var Game = /*#__PURE__*/function () {
     // class instances
     this.menu = new _menu__WEBPACK_IMPORTED_MODULE_1__["Menu"]();
     this.orderSize = this.generateOrderSize();
-    var duration = this.orderSize === 4 ? 15 : 15;
+    var duration = this.orderSize === 4 ? 5 : 5;
     this.order = new _order__WEBPACK_IMPORTED_MODULE_0__["Order"](this.orderSize, duration);
     this.taco = new _taco__WEBPACK_IMPORTED_MODULE_3__["default"](this.orderSize, this.order); // game score
 
@@ -293,7 +293,7 @@ var Game = /*#__PURE__*/function () {
       this.order.clearOrder();
       this.taco.clearTaco();
       this.timer.remove();
-      document.getElementById('modal').classList.add('hidden');
+      document.getElementById('gameover').classList.add('hidden');
       this.nextRound();
     } // the game is over once a user reaches their 3rd strike
 
@@ -308,30 +308,29 @@ var Game = /*#__PURE__*/function () {
     key: "renderFinalScore",
     value: function renderFinalScore() {
       clearInterval(this.levelUp);
-      var message = document.querySelector('.modal-message');
-      var ranking = document.querySelector('.ranking');
-      var rank;
+      var finalScore = document.querySelector('.final-score');
+      var img = document.querySelector(".gameover-bron");
+      var rank = document.querySelector('.rank');
+      img.src = '../assets/bron-head.png';
 
       if (this.score >= 300) {
-        rank = 'GOAT';
+        rank.innerText = 'GOAT';
       } else if (this.score >= 200) {
-        rank = 'Hall of Fame';
+        rank.innerText = 'Hall of Fame';
       } else if (this.score >= 100) {
-        rank = 'Superstar';
+        rank.innerText = 'Superstar';
       } else if (this.score >= 50) {
-        rank = 'All-Star';
-      } else if (this.score >= 0) {
-        rank = 'Rookie';
-      } // case this.score === 0:
-      //     const img = document.createElement('img');
-      //     img.src = '../assets/'
-      //     break;
+        rank.innerText = 'All-Star';
+      } else if (this.score > 0) {
+        rank.innerText = 'Rookie';
+      } else if (this.score === 0) {
+        rank.innerText = 'Bruh';
+        img.src = "../assets/game-over-bron.png";
+      }
 
-
-      message.innerHTML = "You made $".concat(this.score, ".00!");
-      ranking.innerHTML = "Rank: ".concat(rank);
-      var modal = document.getElementById('modal');
-      modal.classList.remove('hidden');
+      finalScore.innerHTML = "You made $".concat(this.score, "!");
+      var gameover = document.getElementById('gameover');
+      gameover.classList.remove('hidden');
     }
   }]);
 
@@ -429,7 +428,7 @@ var Menu = /*#__PURE__*/function () {
       menuImgs.forEach(function (img) {
         return img.remove();
       });
-      document.querySelector('modal').classList.add('hidden');
+      document.querySelector('gameover').classList.add('hidden');
     }
   }]);
 
@@ -467,10 +466,9 @@ var OPTIONS = {
   'tomato': '../assets/ingredients/tomato.png'
 };
 var CUSTOMERS = {
-  1: '../assets/characters/blue-spritesheet.png',
-  2: '../assets/characters/purple-spritesheet.png',
-  3: '../assets/characters/white-spritesheet.png',
-  4: '../assets/characters/yellow-spritesheet.png'
+  1: "../assets/characters/blue-spritesheet.png",
+  2: "../assets/characters/white-spritesheet.png",
+  3: "../assets/characters/yellow-spritesheet.png"
 };
 var Order = /*#__PURE__*/function () {
   function Order(orderSize, duration) {

@@ -10,11 +10,10 @@ export const OPTIONS = {
 };
 
 export const CUSTOMERS = {
-    1: '../assets/characters/blue-spritesheet.png',
-    2: '../assets/characters/purple-spritesheet.png',
-    3: '../assets/characters/white-spritesheet.png',
-    4: '../assets/characters/yellow-spritesheet.png'
-}
+    1: "../assets/characters/blue-spritesheet.png",
+    2: "../assets/characters/white-spritesheet.png",
+    3: "../assets/characters/yellow-spritesheet.png",
+};
 
 export class Order {
     constructor(orderSize, duration) {

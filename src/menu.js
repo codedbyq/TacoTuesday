@@ -53,6 +53,6 @@ export class Menu {
         const menuImgs = document.getElementsByTagName('img');
         menuImgs.forEach(img => img.remove());
 
-        document.querySelector('modal').classList.add('hidden');
+        document.querySelector('gameover').classList.add('hidden');
     }
 }
