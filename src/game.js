@@ -7,7 +7,7 @@ class Game {
     constructor() {
         // class instances
         this.menu = new Menu();
-        this.orderSize = generateOrderSize();
+        this.orderSize = this.generateOrderSize();
         const duration = this.orderSize === 4 ? 7 : 9; 
         this.order = new Order(this.orderSize, duration);
         this.taco = new Taco(this.orderSize, this.order);
@@ -46,7 +46,7 @@ class Game {
     addMenuListener() {
         const ingredients = Array.from(document.querySelectorAll('.ingredient'));
         ingredients.forEach(ingredient => {
-            item.addEventListener('click', () => {
+            ingredient.addEventListener('click', () => {
                 this.taco.addIngredient(ingredient.id);
                 this.updateGame();
             });
@@ -65,8 +65,11 @@ class Game {
 
     // add our timer to the html element and begin counting down
     startTimer() {
-        const timer = document.getElementById('timer');
+        const container = document.querySelector('.timer-container');
+        const timer = document.createElement('div');
+        timer.id = 'timer';
         timer.innerHTML = this.timer.time;
+        container.appendChild(timer);
         this.timer.start();
     }
 
@@ -87,7 +90,7 @@ class Game {
         const strikes = document.getElementById('strikes');
         strikes.innerHTML = '';
 
-        for (i = 0; i < this.strikes; i++) {
+        for (let i = 0; i < this.strikes; i++) {
             const strike = document.createElement('span');
             strike.innerHTML = 'X';
             strikes.appendChild(strike);
@@ -123,7 +126,7 @@ class Game {
             }
 
             this.clearRound();
-            this.startRound();
+            this.nextRound();
         }
     }
 
@@ -142,7 +145,7 @@ class Game {
     nextRound() {
         const duration = this.orderSize === 4 ? 7 : 9;
         this.order = new Order(this.orderSize, duration);
-        this.order = new Order(orderSize);
+        this.order = new Order(this.orderSize);
         this.taco = new Taco(this.orderSize, this.order);
         this.timer = new Timer(this.order.duration, this.updateGame);
         this.startTimer();
@@ -150,9 +153,12 @@ class Game {
 
     // wipe the game canvas clean and start a new game
     restart() {
-        document.getElementById('strikes') = '';
-        document.getElementById('score') = '';
-        document.getElementById('timer') = '';
+        const strikes = document.getElementById('strikes');
+        strikes.innerHTML = '';
+        const score = document.getElementById('score');
+        score.innerHTML = '';
+        const timer = document.getElementById('timer');
+        timer.innerHTML = '';
 
         this.timeElapsed = new Date();
         this.strikes = 0;

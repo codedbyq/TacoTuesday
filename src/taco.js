@@ -9,7 +9,7 @@ class Taco {
     }
 
     generateTaco() {
-        const container = document.querySelector('taco-container');
+        const container = document.querySelector('.taco-container');
         const taco = document.createElement('div');
         taco.id = 'taco';
 
@@ -31,7 +31,7 @@ class Taco {
 
     // reset the taco back to an empty container
     clearTaco() {
-        document.getElementById('taco-container').innerHTML = '';
+        document.querySelector('.taco-container').innerHTML = '';
     }
 
     // add a given ingredient to the taco

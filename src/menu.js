@@ -35,7 +35,7 @@ export class Menu {
     // new Ingredient instance for each node and add it that to the menu array.
     // Finally, append the ingredient image to it's corresponding element 
     generateMenu() {
-        const nodeList = document.querySelectorAll('.menu-item');
+        const nodeList = document.querySelectorAll('.ingredient');
         const nodeArr = Array.from(nodeList);
 
         nodeArr.forEach( node => {

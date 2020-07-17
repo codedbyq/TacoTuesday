@@ -7,11 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../stylesheets/reset.css">
     <link rel="stylesheet" href="../stylesheets/style.css">
+    <script src="./bundle.js" type="application/javascript"></script>
     <title>Taco Tuesday</title>
 </head>
 
 <body>
-    <!-- <div id="intro">
+    <div id="intro">
         <div class="intro-content">
             <h1 id="title">Taco Tuesday</h1>
             <div class="description">
@@ -24,9 +25,20 @@
                 </p>
             </div>
 
-            <button class="start-game">START GAME</button>
+            <button class="start-btn">START GAME</button>
         </div>
-    </div> -->
+    </div>
+
+    <div id='modal' class="hidden">
+        <div class="modal-screen"></div>
+        <div class="modal-content">
+            <div class="modal-message"></div>
+            <div>
+                <p class="ranking"></p>
+            </div>
+            <button class="restart-btn">PLAY AGAIN</button>
+        </div>
+    </div>
 
     <div class="nav-links">
         <a class='github' href="https://github.com/codedbyq/TacoTuesday"></a>
@@ -39,7 +51,7 @@
     <div class="game-content">
         <div class="canvas">
             <div class="game-stats">
-                <div id="timer"></div>
+                <div class="timer-container"></div>
                 <div id="score"></div>
                 <div id="strikes"></div>
             </div>
@@ -65,14 +77,14 @@
                         <div id="cheese" class="ingredient"></div>
                         <div id="pepper" class="ingredient"></div>
                         <div id="steak" class="ingredient"></div>
-                        <div id="pork" class="ingredient"></div>
+                        <div id="ham" class="ingredient"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="./tacotuesday.js" type="application/javascript"></script>
+    <!-- <script src="./bundle.js" type="application/javascript"></script> -->
 
     <footer>
         &copy; Developed by Marquis Bentley

@@ -34,7 +34,7 @@ export class Order {
         const options = Object.keys(OPTIONS);
         const numOptions = options.length;
 
-        for (i = 1; i <= this.numItems; i++) {
+        for (let i = 1; i <= this.numItems; i++) {
             const idx = Math.floor(Math.random() * 5);
             const random = options[idx];
             this.order.push(random);
@@ -47,8 +47,19 @@ export class Order {
         const img = document.createElement('img');
         img.src = CUSTOMERS[idx];
         img.alt = 'customer';
+        img.classList.add('bounceInRight');
         const container = document.querySelector('.customer-container');
         container.appendChild(img);
+    }
+
+
+    generateSpeechBubble() {
+        const container = document.querySelector(".speech-container");
+        const speechBubble = document.createElement('div');
+
+        speechBubble.classList.add('speech-bubble');
+        speechBubble.classList.add('fadeIn');
+        container.appendChild(speechBubble);
     }
 
     // attach an icon to the corresponding ingredient
@@ -72,8 +83,8 @@ export class Order {
             orderItem.appendChild(this.generateIngredient(item));
             order.appendChild(orderItem);
         });
-        const speechBubble = document.querySelector('.speech-container');
-        speechBubble.appendChild(order);
+        const speechContainer = document.querySelector('.speech-container');
+        speechContainer.appendChild(order);
     }
 
     // remove the customer and speech bubble from the canvas

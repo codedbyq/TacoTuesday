@@ -86,8 +86,8 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -113,7 +113,7 @@ footer {
     text-align: justify;
 }
 
-.start-game {
+.start-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,8 +126,9 @@ footer {
     font-size: 20px;
 }
 
-.start-game:hover {
+.start-btn:hover {
     background-color: #3f8035;
+    height: 56px;
     top: -5px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
 }
@@ -211,7 +212,6 @@ footer {
 .taco-container {
     height: 200px;
     width: 340px;
-    border: 1px solid white;
     background-image: url('../assets/tortilla.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -225,14 +225,12 @@ footer {
     align-items: center;
     width: 360px;
     height: 180px;
-    border: 1px solid white;
 }
 
 .menu-row {
     width: 100%;
     display: inline-flex;
     justify-content: space-evenly;
-    border: 1px solid white;
 }
 
 .ingredient {
@@ -244,6 +242,11 @@ footer {
     width: 75px;
     background-color: black;
     border-radius: 8px;
+}
+
+.ingredient > img {
+    height: 75px;
+    width: 75px;
 }
 
 .github:hover, .linkedin:hover, .menu-item:hover, .bento-item:hover, .hover, button:hover {
@@ -264,4 +267,35 @@ footer {
 
 #undo-btn:hover {
     background-color: tomato;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-delay: 0.5s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes flash {
+  from,
+  40%,
+  80% {
+    opacity: 1;
+  }
+
+  20%,
+  60%,
+  to {
+    opacity: 0;
+  }
 }

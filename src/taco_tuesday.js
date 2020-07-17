@@ -1,5 +1,7 @@
 import Game from './game';
 
+console.log('webpack is running')
+
 document.addEventListener('DOMContentLoaded', () => {
     const game = new Game();
     const start = document.querySelector('.start-btn');
@@ -9,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     start.addEventListener('click', () => {
         const intro = document.getElementById('intro');
         intro.classList.add('hidden');
-        game.start();
+        game.play();
     });
 
     // once the start button is clicked hide the div and begin the game
