@@ -179,7 +179,6 @@ footer {
     height: 340px;
     width: 85%;
     margin-top: 115px;
-    border: 1px solid white;
 }
 
 .speech-container {
@@ -230,7 +229,6 @@ footer {
     justify-content: center;
     height: 50px;
     width: 50px;
-    border: 1px solid red;
     border-radius: 8px;
 }
 
