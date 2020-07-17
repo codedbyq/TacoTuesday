@@ -117,7 +117,7 @@ var Game = /*#__PURE__*/function () {
     // class instances
     this.menu = new _menu__WEBPACK_IMPORTED_MODULE_1__["Menu"]();
     this.orderSize = this.generateOrderSize();
-    var duration = this.orderSize === 4 ? 7 : 9;
+    var duration = this.orderSize === 4 ? 15 : 15;
     this.order = new _order__WEBPACK_IMPORTED_MODULE_0__["Order"](this.orderSize, duration);
     this.taco = new _taco__WEBPACK_IMPORTED_MODULE_3__["default"](this.orderSize, this.order); // game score
 
@@ -223,7 +223,7 @@ var Game = /*#__PURE__*/function () {
   }, {
     key: "correctIngredients",
     value: function correctIngredients() {
-      JSON.stringify(this.order.order) === JSON.stringify(this.taco.taco);
+      return JSON.stringify(this.order.order) === JSON.stringify(this.taco.taco);
     } // check to see if the user lost the game, if not update their score/strikes 
     //  and start a new round
 
@@ -240,7 +240,7 @@ var Game = /*#__PURE__*/function () {
         this.renderScore();
         this.clearRound();
         this.nextRound();
-      } else if (this.timer.time < 1 && !this.correctIngredients()) {
+      } else if (this.timer.time === 0 && !this.correctIngredients()) {
         this.strikes++;
         this.renderStrikes();
 

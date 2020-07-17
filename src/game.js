@@ -8,7 +8,7 @@ class Game {
         // class instances
         this.menu = new Menu();
         this.orderSize = this.generateOrderSize();
-        const duration = this.orderSize === 4 ? 7 : 9; 
+        const duration = this.orderSize === 4 ? 15 : 15; 
         this.order = new Order(this.orderSize, duration);
         this.taco = new Taco(this.orderSize, this.order);
 
@@ -100,7 +100,7 @@ class Game {
 
     // check to see if the user input matches the customer's order
     correctIngredients() {
-        JSON.stringify(this.order.order) === JSON.stringify(this.taco.taco);
+       return JSON.stringify(this.order.order) === JSON.stringify(this.taco.taco);
     }
 
     // check to see if the user lost the game, if not update their score/strikes 
@@ -116,7 +116,7 @@ class Game {
             this.renderScore();
             this.clearRound();
             this.nextRound();
-        } else if (this.timer.time < 1 && !this.correctIngredients()) {
+        } else if (this.timer.time === 0 && !this.correctIngredients()) {
             this.strikes ++
             this.renderStrikes();
 
