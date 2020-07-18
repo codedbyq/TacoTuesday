@@ -250,12 +250,12 @@ footer {
 
 .animation {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 340px;
+    height: 500px;
     width: 85%;
     margin-top: 115px;
 }
+
+
 
 .speech-container {
     display: flex;
@@ -315,12 +315,12 @@ footer {
 
 .customer-container {
     display: flex;
+    margin-top: auto;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     border: 1px solid black;
-    height: 140px;
-    width: 140px;
+    height: 250px;
 }
 
 .kitchen {

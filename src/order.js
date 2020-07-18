@@ -10,10 +10,11 @@ export const OPTIONS = {
 };
 
 export const CUSTOMERS = {
-    1: "../assets/characters/blue-spritesheet.png",
-    2: "../assets/characters/white-spritesheet.png",
-    3: "../assets/characters/yellow-spritesheet.png",
-    4: "../assets/characters/purple-spritesheet.png"
+    1: "../assets/characters/blue-customer.png",
+    2: "../assets/characters/yellow-customer.png",
+    3: "../assets/characters/purple-customer.png",
+    4: "../assets/characters/pink-customer.png",
+    5: "../assets/characters/green-customer.png",
 };
 
 export class Order {
@@ -43,10 +44,11 @@ export class Order {
 
     // generate a random customer
     generateCustomer() {
-        const idx = Math.floor(Math.random() * 4);
+        const idx = Math.floor(Math.random() * 5);
         const img = document.createElement('img');
         img.src = CUSTOMERS[idx];
-        img.alt = 'customer';
+        img.id = 'customer'
+        img.alt = `customer${idx}`;
         img.classList.add('bounceInRight');
         const container = document.querySelector('.customer-container');
         container.appendChild(img);

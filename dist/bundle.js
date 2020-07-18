@@ -466,10 +466,11 @@ var OPTIONS = {
   'tomato': '../assets/ingredients/tomato.png'
 };
 var CUSTOMERS = {
-  1: "../assets/characters/blue-spritesheet.png",
-  2: "../assets/characters/white-spritesheet.png",
-  3: "../assets/characters/yellow-spritesheet.png",
-  4: "../assets/characters/purple-spritesheet.png"
+  1: "../assets/characters/blue-customer.png",
+  2: "../assets/characters/yellow-customer.png",
+  3: "../assets/characters/purple-customer.png",
+  4: "../assets/characters/pink-customer.png",
+  5: "../assets/characters/green-customer.png"
 };
 var Order = /*#__PURE__*/function () {
   function Order(orderSize, duration) {
@@ -502,10 +503,11 @@ var Order = /*#__PURE__*/function () {
   }, {
     key: "generateCustomer",
     value: function generateCustomer() {
-      var idx = Math.floor(Math.random() * 4);
+      var idx = Math.floor(Math.random() * 5);
       var img = document.createElement('img');
       img.src = CUSTOMERS[idx];
-      img.alt = 'customer';
+      img.id = 'customer';
+      img.alt = "customer".concat(idx);
       img.classList.add('bounceInRight');
       var container = document.querySelector('.customer-container');
       container.appendChild(img);
