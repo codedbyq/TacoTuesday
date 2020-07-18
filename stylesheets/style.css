@@ -72,6 +72,10 @@ body {
     background-image: url('../assets/icons/icons8-audio-48.png');
 }
 
+.mute {
+    background-image: url('../assets/icons/icons8-no-audio-48.png');
+}
+
 footer {
     font-size: 20px;
     margin: 15px;
@@ -142,7 +146,7 @@ footer {
     justify-content: center;
     align-items: center;
     height: 300px;
-    width: 150px;
+    width: 175px;
     margin-left: auto;
     margin-right: auto;
 }

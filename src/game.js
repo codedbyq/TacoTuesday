@@ -197,7 +197,7 @@ class Game {
         } else if (this.score > 0) {
             rank.innerText = 'Rookie';
         } else if (this.score === 0) {
-            rank.innerText = 'Bruh';
+            rank.innerText = 'JR';
             img.src = "../assets/game-over-bron.png";
         }
         

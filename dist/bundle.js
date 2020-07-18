@@ -324,7 +324,7 @@ var Game = /*#__PURE__*/function () {
       } else if (this.score > 0) {
         rank.innerText = 'Rookie';
       } else if (this.score === 0) {
-        rank.innerText = 'Bruh';
+        rank.innerText = 'JR';
         img.src = "../assets/game-over-bron.png";
       }
 
@@ -468,7 +468,8 @@ var OPTIONS = {
 var CUSTOMERS = {
   1: "../assets/characters/blue-spritesheet.png",
   2: "../assets/characters/white-spritesheet.png",
-  3: "../assets/characters/yellow-spritesheet.png"
+  3: "../assets/characters/yellow-spritesheet.png",
+  4: "../assets/characters/purple-spritesheet.png"
 };
 var Order = /*#__PURE__*/function () {
   function Order(orderSize, duration) {
@@ -501,7 +502,7 @@ var Order = /*#__PURE__*/function () {
   }, {
     key: "generateCustomer",
     value: function generateCustomer() {
-      var idx = Math.floor(Math.random() * 5);
+      var idx = Math.floor(Math.random() * 4);
       var img = document.createElement('img');
       img.src = CUSTOMERS[idx];
       img.alt = 'customer';
@@ -717,10 +718,29 @@ console.log('webpack is running');
 document.addEventListener('DOMContentLoaded', function () {
   var game = new _game__WEBPACK_IMPORTED_MODULE_0__["default"]();
   var start = document.querySelector('.start-btn');
-  var restart = document.querySelector('.restart-btn'); // once the start button is clicked hide the div and begin the game
+  var restart = document.querySelector('.restart-btn');
+  var volume = document.querySelector('.volume-btn');
+  volume.addEventListener('click', function () {
+    var sounds = document.getElementsByTagName('audio');
+    var soundsArr = Array.from(sounds);
+    volume.classList.toggle('mute');
+    soundsArr.forEach(function (sound) {
+      if (sound.volume > 0) {
+        sound.pause();
+        sound.volume = 0;
+      } else {
+        sound.volume = 0;
+        sound.play();
+      }
+    });
+  }); // once the start button is clicked hide the div and begin the game
 
   start.addEventListener('click', function () {
+    var bgmusic = document.getElementById('salsa');
+    bgmusic.volume = 0.3;
+    bgmusic.play();
     var audio = document.getElementById('bron-sound');
+    audio.volume = 0.3;
     audio.play();
     var intro = document.getElementById('intro');
     intro.classList.add('hidden');

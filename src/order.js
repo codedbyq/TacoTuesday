@@ -13,6 +13,7 @@ export const CUSTOMERS = {
     1: "../assets/characters/blue-spritesheet.png",
     2: "../assets/characters/white-spritesheet.png",
     3: "../assets/characters/yellow-spritesheet.png",
+    4: "../assets/characters/purple-spritesheet.png"
 };
 
 export class Order {
@@ -42,7 +43,7 @@ export class Order {
 
     // generate a random customer
     generateCustomer() {
-        const idx = Math.floor(Math.random() * 5);
+        const idx = Math.floor(Math.random() * 4);
         const img = document.createElement('img');
         img.src = CUSTOMERS[idx];
         img.alt = 'customer';
