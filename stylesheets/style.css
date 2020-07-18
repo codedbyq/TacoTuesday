@@ -250,8 +250,9 @@ footer {
 
 .animation {
     display: flex;
+    justify-content: center;
     height: 500px;
-    width: 85%;
+    width: 65%;
     margin-top: 115px;
 }
 
@@ -260,8 +261,7 @@ footer {
 .speech-container {
     display: flex;
     height: 200px;
-    width: 335px;
-    margin-left: auto;
+    width: 235px;
     background-image: url('../assets/speechbubble.png');
     background-position: center;
     background-size: contain;
@@ -271,7 +271,7 @@ footer {
 
 .speech-bubble {
     height: 125px;
-    width: 330px;
+    width: 230px;
 }
 
 .order-container {
@@ -281,7 +281,7 @@ footer {
     margin-top: 12px;
     margin-left: 15px;
     height: 120px;
-    width: 290px;
+    width: 200px;
 }
 
 .order-row {
@@ -316,10 +316,10 @@ footer {
 .customer-container {
     display: flex;
     margin-top: auto;
+    margin-left: auto;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    border: 1px solid black;
     height: 250px;
 }
 
