@@ -466,11 +466,11 @@ var OPTIONS = {
   'tomato': '../assets/ingredients/tomato.png'
 };
 var CUSTOMERS = {
-  1: "../assets/characters/blue-customer.png",
-  2: "../assets/characters/yellow-customer.png",
-  3: "../assets/characters/purple-customer.png",
-  4: "../assets/characters/pink-customer.png",
-  5: "../assets/characters/green-customer.png"
+  0: "../assets/characters/blue-customer.png",
+  1: "../assets/characters/yellow-customer.png",
+  2: "../assets/characters/purple-customer.png",
+  3: "../assets/characters/pink-customer.png",
+  4: "../assets/characters/green-customer.png"
 };
 var Order = /*#__PURE__*/function () {
   function Order(orderSize, duration) {
