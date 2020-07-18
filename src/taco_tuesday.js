@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // once the start button is clicked hide the div and begin the game
     start.addEventListener('click', () => {
+        const audio = document.getElementById('bron-sound');
+        audio.play();
+
         const intro = document.getElementById('intro');
         intro.classList.add('hidden');
         game.play();
@@ -16,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // once the start button is clicked hide the div and begin the game
     restart.addEventListener('click', () => {
+        const audio = document.getElementById("bron-sound");
+        audio.play();
         game.restart();
     });
 });
