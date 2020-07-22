@@ -8,6 +8,7 @@ export const INGREDIENTS = {
     'pepper': '../assets/ingredients/blk-pepper.png',
     'steak': '../assets/ingredients/blk-steak.png',
     'tomato': '../assets/ingredients/blk-tomato.png',
+    'rice' : '../assets/ingredients/blk-rice.png'
 };
 
 export class Ingredient {
