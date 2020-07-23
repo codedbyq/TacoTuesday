@@ -8,7 +8,7 @@ export const INGREDIENTS = {
     'pepper': '../assets/ingredients/blk-pepper.png',
     'steak': '../assets/ingredients/blk-steak.png',
     'tomato': '../assets/ingredients/blk-tomato.png',
-    'rice' : '../assets/ingredients/blk-rice.png'
+    'rice': '../assets/ingredients/blk-tomato.png',
 };
 
 export class Ingredient {
@@ -38,9 +38,9 @@ export class Menu {
     generateMenu() {
         const nodeList = document.querySelectorAll('.ingredient');
         const nodeArr = Array.from(nodeList);
-
         nodeArr.forEach( node => {
             const key = node.id;
+            console.log(key)
             const ingredient = new Ingredient(key, INGREDIENTS[key]);
             this.menu.push(ingredient);
             node.append(ingredient.render());

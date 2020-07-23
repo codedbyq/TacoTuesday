@@ -61,6 +61,20 @@
     <h1 id='main-title'>Taco Tuesday</h1>
 
     <div class="game-content">
+        <script>
+            const background = document.querySelector('.game-content');
+            const date = new Date();
+            const hours = date.getHours();
+
+            if (hours > 5 && hours <= 16) {
+                background.id = 'day';
+            } else if (hours > 16 && hours <= 20) {
+                background.id = 'evening';
+            } else {
+                background.id = 'night';
+            }
+        </script>
+
         <div class="canvas">
             <div class="main-game">
                 <div class="game-stats">
@@ -84,14 +98,17 @@
                     <div class="menu-row">
                         <div id="tomato" class="ingredient"></div>
                         <div id="avacado" class="ingredient"></div>
-                        <div id="onion" class="ingredient"></div>
                         <div id="beans" class="ingredient"></div>
                     </div>
                     <div class="menu-row">
                         <div id="cheese" class="ingredient"></div>
                         <div id="pepper" class="ingredient"></div>
+                        <div id="rice" class="ingredient"></div>
+                    </div>
+                    <div class="menu-row">
                         <div id="steak" class="ingredient"></div>
                         <div id="ham" class="ingredient"></div>
+                        <div id="onion" class="ingredient"></div>
                     </div>
                 </div>
             </div>

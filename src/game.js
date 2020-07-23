@@ -11,6 +11,7 @@ class Game {
         const duration = this.orderSize === 4 ? 5 : 5; 
         this.order = new Order(this.orderSize, duration);
         this.taco = new Taco(this.orderSize, this.order);
+        this.generateBackground();
 
         // game score
         this.updateGame = this.updateGame.bind(this);
@@ -25,6 +26,21 @@ class Game {
         this.addMenuListener = this.addMenuListener.bind(this);
         this.addUndoListener = this.addUndoListener.bind(this);
         this.checkElapsedTime = this.checkElapsedTime.bind(this);
+    }
+
+    generateBackground() {
+        debugger
+        const background = document.querySelector('.game-content');
+        const date = new Date();
+        const hours = date.getHours();
+
+        if (hours > 5 && hours <= 16) {
+            background.id = 'day';
+        } else if (hours > 16 && hours <= 20) {
+            background.id = 'evening';
+        } else {
+            background.id = 'night';
+        }
     }
 
     // randomly choose the customers order size

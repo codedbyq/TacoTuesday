@@ -7,6 +7,7 @@ export const OPTIONS = {
     'pepper': '../assets/ingredients/pepper.png',
     'steak': '../assets/ingredients/steak.png',
     'tomato': '../assets/ingredients/tomato.png',
+    'rice': '../assets/ingredients/rice.png',
 };
 
 export const CUSTOMERS = {
@@ -33,10 +34,9 @@ export class Order {
     // order
     generateOrder() {
         const options = Object.keys(OPTIONS);
-        const numOptions = options.length;
 
         for (let i = 0; i < this.orderSize; i++) {
-            const idx = Math.floor(Math.random() * numOptions);
+            const idx = Math.floor(Math.random() * options.length);
             const random = options[idx];
             this.order.push(random);
         }

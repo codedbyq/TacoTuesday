@@ -195,18 +195,30 @@ footer {
 
 .game-content {
     display: inline-flex;
-    justify-content: flex-start;
     align-items: center;
-    height: 100%;
-    width: 100%;
+    width: 850px;
     border-radius: 12px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
-    background: rgb(255, 255, 255);
+}
+
+#day {
+    background: rgb(0,164,255);
+    background: linear-gradient(180deg, rgba(0,164,255,1) 0%, rgba(135,211,253,1) 49%, rgba(242,249,255,1) 100%);
+}
+
+#evening {
+    background: rgba(252,176,69,1);
     background: linear-gradient(0deg, rgba(252,176,69,1) 35%, rgba(253,29,29,1) 64%, rgba(57,7,150,1) 100%);
+}
+
+#night {
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(37,26,139,1) 56%, rgba(66,48,226,1) 100%);
 }
 
 .canvas {
     display: flex;
+    width: 1100px;
     flex-direction: row;
     justify-content: space-between;
     border: 15px solid rgb(84, 169, 71);
@@ -327,11 +339,11 @@ footer {
 .kitchen {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     /* z-index: 5; */
-    width: 30%;
-    height: 100%;
+    width: 260px;
+    height: 600px;
+    padding-left: 15px;
     background-color: rgb(84, 169, 71);
 }
 
@@ -340,7 +352,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 290px;
     width: 290px;
     background-image: url('../assets/tortilla.png');
     background-repeat: no-repeat;
@@ -386,12 +398,13 @@ footer {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 360px;
-    width: 180px;
+    height: 300px;
+    width: 100%;
+    margin-left: 10px;
 }
 
 .menu-row {
-    width: 100%;
+    width: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -406,6 +419,7 @@ footer {
     width: 75px;
     background-color: black;
     border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .ingredient > img {
