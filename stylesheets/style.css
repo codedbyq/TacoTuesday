@@ -1,10 +1,8 @@
 body {
     height: 100%;
-    width: 100%;
-    box-sizing: border-box;
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     font-family:'Baloo Da 2', cursive;
     background-color: black;
@@ -194,9 +192,8 @@ footer {
 
 
 .game-content {
-    display: inline-flex;
     align-items: center;
-    width: 850px;
+    width: 1130px;
     border-radius: 12px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
 }
