@@ -11,19 +11,24 @@ export const INGREDIENTS = {
     'rice': '../assets/ingredients/blk-tomato.png',
 };
 
-export class Ingredient {
-    constructor(key, imageURL) {
-        this.key = key;
-        this.imageURL = imageURL;
-    }
+export const Ingredient = (key, imageUrl) => {
+    // constructor(key, imageURL) {
+    //     this.key = key;
+    //     this.imageURL = imageURL;
+    // }
 
     // return an image sprite for the ingredient
-    render() {
-        const img = document.createElement("img");
-        img.src = this.imageURL;
-        img.alt = `${this.key}`;
-        return img;
-    }
+    // render() {
+    //     const img = document.createElement("img");
+    //     img.src = this.imageURL;
+    //     img.alt = `${this.key}`;
+    //     return img;
+    // }
+
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.alt = `${key}`;
+    return img
 }
 
 export class Menu {
