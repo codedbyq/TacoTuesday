@@ -165,9 +165,10 @@ footer {
 
 .description {
     display: flex;
+    flex-direction: column;
     text-align: justify;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .start-btn, .restart-btn {

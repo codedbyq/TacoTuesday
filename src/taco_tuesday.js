@@ -7,25 +7,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const game = new Game();
     const start = document.querySelector('.start-btn');
     const restart = document.querySelector('.restart-btn');
-    const volume = document.querySelector('.volume-btn');
-
+    const volumeList = document.querySelectorAll('.volume-btn');
+    const volumeArr = Array.from(volumeList)
    
-
-    volume.addEventListener('click', () => {
-        const sounds = document.getElementsByTagName('audio');
-        const soundsArr = Array.from(sounds);
-        volume.classList.toggle('mute');
-        
-        soundsArr.forEach(sound => {
-            if (sound.volume > 0) {
-                sound.pause();
-                sound.volume = 0;
-            } else {
-                sound.volume = 0;
-                sound.play();
-            }
-        });
-    });
+    volumeArr.forEach(volume => (
+        volume.addEventListener('click', () => {
+            const sounds = document.getElementsByTagName('audio');
+            const soundsArr = Array.from(sounds);
+            volume.classList.toggle('mute');
+            
+            soundsArr.forEach(sound => {
+                if (sound.volume > 0) {
+                    sound.pause();
+                    sound.volume = 0;
+                } else {
+                    sound.volume = 0;
+                    sound.play();
+                }
+            });
+        })
+    ))
 
     // once the start button is clicked hide the div and begin the game
     start.addEventListener('click', () => {
