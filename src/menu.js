@@ -1,39 +1,26 @@
 export const INGREDIENTS = {
          // key: image url
          avacado:
-           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-avacado.PNG",
+           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-avacado.PNG",
          beans:
-           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-beans.png",
+           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-beans.png",
          cheese:
-           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-cheese.png",
+           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-cheese.png",
          ham:
-           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-ham.png",
+           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-ham.png",
          onion:
-           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-onion.png",
+           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-onion.png",
          pepper:
-           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-pepper.png",
+           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-pepper.png",
          steak:
-           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-steak.png",
+           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-steak.png",
          tomato:
-           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-tomato.png",
+           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-tomato.png",
          rice:
-           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-rice.PNG",
+           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-rice.PNG",
        };
 
 export const Ingredient = (key, imageUrl) => {
-    // constructor(key, imageURL) {
-    //     this.key = key;
-    //     this.imageURL = imageURL;
-    // }
-
-    // return an image sprite for the ingredient
-    // render() {
-    //     const img = document.createElement("img");
-    //     img.src = this.imageURL;
-    //     img.alt = `${this.key}`;
-    //     return img;
-    // }
-
     const img = document.createElement('img');
     img.src = imageUrl;
     img.alt = `${key}`;
