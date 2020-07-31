@@ -199,7 +199,8 @@ class Game {
         const finalScore = document.querySelector('.final-score');
         const img = document.querySelector(".gameover-bron")
         const rank = document.querySelector('.rank');
-        img.src = '../assets/bron-head.png';
+        img.src =
+          "https://taco-tuesday.s3-us-west-1.amazonaws.com/Bron/bron-head.png";
 
         if (this.score >= 300) {
             rank.innerText = 'GOAT';
@@ -213,7 +214,8 @@ class Game {
             rank.innerText = 'Rookie';
         } else if (this.score === 0) {
             rank.innerText = 'JR';
-            img.src = "../assets/game-over-bron.png";
+            img.src =
+              "https://taco-tuesday.s3-us-west-1.amazonaws.com/Bron/game-over-bron.png";
         }
         
         finalScore.innerHTML = `You made $${this.score}!`;
