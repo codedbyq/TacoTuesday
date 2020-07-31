@@ -119,7 +119,8 @@ var Game = /*#__PURE__*/function () {
     this.orderSize = this.generateOrderSize();
     var duration = this.orderSize === 4 ? 5 : 5;
     this.order = new _order__WEBPACK_IMPORTED_MODULE_0__["Order"](this.orderSize, duration);
-    this.taco = new _taco__WEBPACK_IMPORTED_MODULE_3__["default"](this.orderSize, this.order); // game score
+    this.taco = new _taco__WEBPACK_IMPORTED_MODULE_3__["default"](this.orderSize, this.order);
+    this.generateBackground(); // game score
 
     this.updateGame = this.updateGame.bind(this);
     this.timer = new _timer__WEBPACK_IMPORTED_MODULE_2__["default"](this.order.duration, this.updateGame);
@@ -132,10 +133,26 @@ var Game = /*#__PURE__*/function () {
     this.addMenuListener = this.addMenuListener.bind(this);
     this.addUndoListener = this.addUndoListener.bind(this);
     this.checkElapsedTime = this.checkElapsedTime.bind(this);
-  } // randomly choose the customers order size
-
+  }
 
   _createClass(Game, [{
+    key: "generateBackground",
+    value: function generateBackground() {
+      debugger;
+      var background = document.querySelector('.game-content');
+      var date = new Date();
+      var hours = date.getHours();
+
+      if (hours > 5 && hours <= 16) {
+        background.id = 'day';
+      } else if (hours > 16 && hours <= 20) {
+        background.id = 'evening';
+      } else {
+        background.id = 'night';
+      }
+    } // randomly choose the customers order size
+
+  }, {
     key: "generateOrderSize",
     value: function generateOrderSize() {
       var size = [4, 6];
@@ -368,29 +385,26 @@ var INGREDIENTS = {
   'onion': '../assets/ingredients/blk-onion.png',
   'pepper': '../assets/ingredients/blk-pepper.png',
   'steak': '../assets/ingredients/blk-steak.png',
-  'tomato': '../assets/ingredients/blk-tomato.png'
+  'tomato': '../assets/ingredients/blk-tomato.png',
+  'rice': '../assets/ingredients/blk-tomato.png'
 };
-var Ingredient = /*#__PURE__*/function () {
-  function Ingredient(key, imageURL) {
-    _classCallCheck(this, Ingredient);
-
-    this.key = key;
-    this.imageURL = imageURL;
-  } // return an image sprite for the ingredient
-
-
-  _createClass(Ingredient, [{
-    key: "render",
-    value: function render() {
-      var img = document.createElement("img");
-      img.src = this.imageURL;
-      img.alt = "".concat(this.key);
-      return img;
-    }
-  }]);
-
-  return Ingredient;
-}();
+var Ingredient = function Ingredient(key, imageUrl) {
+  // constructor(key, imageURL) {
+  //     this.key = key;
+  //     this.imageURL = imageURL;
+  // }
+  // return an image sprite for the ingredient
+  // render() {
+  //     const img = document.createElement("img");
+  //     img.src = this.imageURL;
+  //     img.alt = `${this.key}`;
+  //     return img;
+  // }
+  var img = document.createElement('img');
+  img.src = imageUrl;
+  img.alt = "".concat(key);
+  return img;
+};
 var Menu = /*#__PURE__*/function () {
   function Menu() {
     _classCallCheck(this, Menu);
@@ -411,6 +425,7 @@ var Menu = /*#__PURE__*/function () {
       var nodeArr = Array.from(nodeList);
       nodeArr.forEach(function (node) {
         var key = node.id;
+        console.log(key);
         var ingredient = new Ingredient(key, INGREDIENTS[key]);
 
         _this.menu.push(ingredient);
@@ -463,7 +478,8 @@ var OPTIONS = {
   'onion': '../assets/ingredients/onions.png',
   'pepper': '../assets/ingredients/pepper.png',
   'steak': '../assets/ingredients/steak.png',
-  'tomato': '../assets/ingredients/tomato.png'
+  'tomato': '../assets/ingredients/tomato.png',
+  'rice': '../assets/ingredients/rice.png'
 };
 var CUSTOMERS = {
   0: "../assets/characters/blue-customer.png",
@@ -491,10 +507,9 @@ var Order = /*#__PURE__*/function () {
     key: "generateOrder",
     value: function generateOrder() {
       var options = Object.keys(OPTIONS);
-      var numOptions = options.length;
 
       for (var i = 0; i < this.orderSize; i++) {
-        var idx = Math.floor(Math.random() * numOptions);
+        var idx = Math.floor(Math.random() * options.length);
         var random = options[idx];
         this.order.push(random);
       }
@@ -718,22 +733,26 @@ __webpack_require__.r(__webpack_exports__);
 
 console.log('webpack is running');
 document.addEventListener('DOMContentLoaded', function () {
+  debugger;
   var game = new _game__WEBPACK_IMPORTED_MODULE_0__["default"]();
   var start = document.querySelector('.start-btn');
   var restart = document.querySelector('.restart-btn');
-  var volume = document.querySelector('.volume-btn');
-  volume.addEventListener('click', function () {
-    var sounds = document.getElementsByTagName('audio');
-    var soundsArr = Array.from(sounds);
-    volume.classList.toggle('mute');
-    soundsArr.forEach(function (sound) {
-      if (sound.volume > 0) {
-        sound.pause();
-        sound.volume = 0;
-      } else {
-        sound.volume = 0;
-        sound.play();
-      }
+  var volumeList = document.querySelectorAll('.volume-btn');
+  var volumeArr = Array.from(volumeList);
+  volumeArr.forEach(function (volume) {
+    return volume.addEventListener('click', function () {
+      var sounds = document.getElementsByTagName('audio');
+      var soundsArr = Array.from(sounds);
+      volume.classList.toggle('mute');
+      soundsArr.forEach(function (sound) {
+        if (sound.volume > 0) {
+          sound.pause();
+          sound.volume = 0;
+        } else {
+          sound.volume = 0;
+          sound.play();
+        }
+      });
     });
   }); // once the start button is clicked hide the div and begin the game
 

@@ -29,7 +29,6 @@ class Game {
     }
 
     generateBackground() {
-        debugger
         const background = document.querySelector('.game-content');
         const date = new Date();
         const hours = date.getHours();

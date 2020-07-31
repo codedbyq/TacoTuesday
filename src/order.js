@@ -1,14 +1,24 @@
 export const OPTIONS = {
-    'avacado': '../assets/ingredients/avacado.PNG',
-    'beans': '../assets/ingredients/beans.png',
-    'cheese': '../assets/ingredients/cheese.png',
-    'ham': '../assets/ingredients/ham.png',
-    'onion': '../assets/ingredients/onions.png',
-    'pepper': '../assets/ingredients/pepper.png',
-    'steak': '../assets/ingredients/steak.png',
-    'tomato': '../assets/ingredients/tomato.png',
-    'rice': '../assets/ingredients/rice.png',
-};
+         // key: image url
+         avacado:
+           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/avacado.PNG",
+         beans:
+           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/beans.png",
+         cheese:
+           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/cheese.png",
+         ham:
+           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/ham.png",
+         onion:
+           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/onion.png",
+         pepper:
+           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/pepper.png",
+         steak:
+           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/steak.png",
+         tomato:
+           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/tomato.png",
+         rice:
+           "https://cloud-sound-assets.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/rice.PNG",
+       };
 
 export const CUSTOMERS = {
     0: "../assets/characters/blue-customer.png",
