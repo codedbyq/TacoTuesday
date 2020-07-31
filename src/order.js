@@ -1,32 +1,32 @@
 export const OPTIONS = {
-         // key: image url
-         avacado:
-           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/avacado.PNG",
-         beans:
-           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/beans.png",
-         cheese:
-           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/cheese.png",
-         ham:
-           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/ham.png",
-         onion:
-           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/onion.png",
-         pepper:
-           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/pepper.png",
-         steak:
-           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/steak.png",
-         tomato:
-           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/tomato.png",
-         rice:
-           "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/rice.PNG",
-       };
+  // key: image url
+  avacado:
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/avacado.PNG",
+  beans:
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/beans.png",
+  cheese:
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/cheese.png",
+  ham:
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/ham.png",
+  onion:
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/onion.png",
+  pepper:
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/pepper.png",
+  steak:
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/steak.png",
+  tomato:
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/tomato.png",
+  rice:
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/rice.PNG",
+};
 
 export const CUSTOMERS = {
-         0: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/blue-customer.png",
-         1: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/yellow-customer.png",
-         2: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/purple-customer.png",
-         3: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/pink-customer.png",
-         4: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/green-customer.png",
-       };
+  0: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/blue-customer.png",
+  1: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/yellow-customer.png",
+  2: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/purple-customer.png",
+  3: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/pink-customer.png",
+  4: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/green-customer.png",
+};
 
 export class Order {
     constructor(orderSize, duration) {

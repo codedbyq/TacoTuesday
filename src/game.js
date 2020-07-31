@@ -216,6 +216,7 @@ class Game {
             rank.innerText = 'JR';
             img.src =
               "https://taco-tuesday.s3-us-west-1.amazonaws.com/Bron/game-over-bron.png";
+
         }
         
         finalScore.innerHTML = `You made $${this.score}!`;
