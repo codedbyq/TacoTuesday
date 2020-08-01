@@ -54,7 +54,6 @@ export class Menu {
         const nodeArr = Array.from(nodeList);
         nodeArr.forEach( node => {
             const key = node.id;
-            console.log(key)
             const ingredient = new Ingredient(key, INGREDIENTS[key]);
             this.menu.push(ingredient);
             node.append(ingredient.render());

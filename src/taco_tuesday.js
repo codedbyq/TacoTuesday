@@ -3,7 +3,6 @@ import Game from './game';
 console.log('webpack is running')
 
 document.addEventListener('DOMContentLoaded', () => {
-    debugger
     const game = new Game();
     const start = document.querySelector('.start-btn');
     const restart = document.querySelector('.restart-btn');
