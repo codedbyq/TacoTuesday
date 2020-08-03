@@ -119,7 +119,8 @@ var Game = /*#__PURE__*/function () {
     this.orderSize = this.generateOrderSize();
     var duration = this.orderSize === 4 ? 5 : 5;
     this.order = new _order__WEBPACK_IMPORTED_MODULE_0__["Order"](this.orderSize, duration);
-    this.taco = new _taco__WEBPACK_IMPORTED_MODULE_3__["default"](this.orderSize, this.order); // game score
+    this.taco = new _taco__WEBPACK_IMPORTED_MODULE_3__["default"](this.orderSize, this.order);
+    this.generateBackground(); // game score
 
     this.updateGame = this.updateGame.bind(this);
     this.timer = new _timer__WEBPACK_IMPORTED_MODULE_2__["default"](this.order.duration, this.updateGame);
@@ -132,10 +133,25 @@ var Game = /*#__PURE__*/function () {
     this.addMenuListener = this.addMenuListener.bind(this);
     this.addUndoListener = this.addUndoListener.bind(this);
     this.checkElapsedTime = this.checkElapsedTime.bind(this);
-  } // randomly choose the customers order size
-
+  }
 
   _createClass(Game, [{
+    key: "generateBackground",
+    value: function generateBackground() {
+      var background = document.querySelector('.game-content');
+      var date = new Date();
+      var hours = date.getHours();
+
+      if (hours > 5 && hours <= 16) {
+        background.id = 'day';
+      } else if (hours > 16 && hours <= 20) {
+        background.id = 'evening';
+      } else {
+        background.id = 'night';
+      }
+    } // randomly choose the customers order size
+
+  }, {
     key: "generateOrderSize",
     value: function generateOrderSize() {
       var size = [4, 6];
@@ -311,7 +327,7 @@ var Game = /*#__PURE__*/function () {
       var finalScore = document.querySelector('.final-score');
       var img = document.querySelector(".gameover-bron");
       var rank = document.querySelector('.rank');
-      img.src = '../assets/bron-head.png';
+      img.src = "https://taco-tuesday.s3-us-west-1.amazonaws.com/Bron/bron-head.png";
 
       if (this.score >= 300) {
         rank.innerText = 'GOAT';
@@ -325,7 +341,7 @@ var Game = /*#__PURE__*/function () {
         rank.innerText = 'Rookie';
       } else if (this.score === 0) {
         rank.innerText = 'JR';
-        img.src = "../assets/game-over-bron.png";
+        img.src = "https://taco-tuesday.s3-us-west-1.amazonaws.com/Bron/game-over-bron.png";
       }
 
       finalScore.innerHTML = "You made $".concat(this.score, "!");
@@ -361,36 +377,33 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var INGREDIENTS = {
   // key: image url
-  'avacado': '../assets/ingredients/blk-avacado.PNG',
-  'beans': '../assets/ingredients/blk-beans.png',
-  'cheese': '../assets/ingredients/blk-cheese.png',
-  'ham': '../assets/ingredients/blk-ham.png',
-  'onion': '../assets/ingredients/blk-onion.png',
-  'pepper': '../assets/ingredients/blk-pepper.png',
-  'steak': '../assets/ingredients/blk-steak.png',
-  'tomato': '../assets/ingredients/blk-tomato.png'
+  avacado: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-avacado.PNG",
+  beans: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-beans.png",
+  cheese: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-cheese.png",
+  ham: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-ham.png",
+  onion: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-onion.png",
+  pepper: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-pepper.png",
+  steak: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-steak.png",
+  tomato: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-tomato.png",
+  rice: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-rice.PNG"
 };
-var Ingredient = /*#__PURE__*/function () {
-  function Ingredient(key, imageURL) {
-    _classCallCheck(this, Ingredient);
-
-    this.key = key;
-    this.imageURL = imageURL;
-  } // return an image sprite for the ingredient
-
-
-  _createClass(Ingredient, [{
-    key: "render",
-    value: function render() {
-      var img = document.createElement("img");
-      img.src = this.imageURL;
-      img.alt = "".concat(this.key);
-      return img;
-    }
-  }]);
-
-  return Ingredient;
-}();
+var Ingredient = function Ingredient(key, imageUrl) {
+  // constructor(key, imageURL) {
+  //     this.key = key;
+  //     this.imageURL = imageURL;
+  // }
+  // return an image sprite for the ingredient
+  // render() {
+  //     const img = document.createElement("img");
+  //     img.src = this.imageURL;
+  //     img.alt = `${this.key}`;
+  //     return img;
+  // }
+  var img = document.createElement('img');
+  img.src = imageUrl;
+  img.alt = "".concat(key);
+  return img;
+};
 var Menu = /*#__PURE__*/function () {
   function Menu() {
     _classCallCheck(this, Menu);
@@ -433,7 +446,27 @@ var Menu = /*#__PURE__*/function () {
   }]);
 
   return Menu;
-}();
+}(); // export function Menu() {
+//     this.menu = [];
+//     this.generateMenu();
+// }
+// Menu.prototype.generateMenu = function() {
+//     const nodeList = document.querySelectorAll('.ingredient');
+//     const nodeArr = Array.from(nodeList);
+//     nodeArr.forEach(node => {
+//         const key = node.id;
+//         console.log(key)
+//         const ingredient = new Ingredient(key, INGREDIENTS[key]);
+//         this.menu.push(ingredient);
+//         node.append(ingredient.render());
+//     });
+// }
+// Menu.prototype.deleteMenu = function() {
+//     const menu = document.querySelector('.menu');
+//     const menuImgs = document.getElementsByTagName('img');
+//     menuImgs.forEach(img => img.remove());
+//     document.querySelector('gameover').classList.add('hidden');
+// }
 
 /***/ }),
 
@@ -456,21 +489,23 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var OPTIONS = {
-  'avacado': '../assets/ingredients/avacado.PNG',
-  'beans': '../assets/ingredients/beans.png',
-  'cheese': '../assets/ingredients/cheese.png',
-  'ham': '../assets/ingredients/ham.png',
-  'onion': '../assets/ingredients/onions.png',
-  'pepper': '../assets/ingredients/pepper.png',
-  'steak': '../assets/ingredients/steak.png',
-  'tomato': '../assets/ingredients/tomato.png'
+  // key: image url
+  avacado: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/avacado.PNG",
+  beans: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/beans.png",
+  cheese: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/cheese.png",
+  ham: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/ham.png",
+  onion: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/onion.png",
+  pepper: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/pepper.png",
+  steak: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/steak.png",
+  tomato: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/tomato.png",
+  rice: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/rice.PNG"
 };
 var CUSTOMERS = {
-  0: "../assets/characters/blue-customer.png",
-  1: "../assets/characters/yellow-customer.png",
-  2: "../assets/characters/purple-customer.png",
-  3: "../assets/characters/pink-customer.png",
-  4: "../assets/characters/green-customer.png"
+  0: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/blue-customer.png",
+  1: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/yellow-customer.png",
+  2: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/purple-customer.png",
+  3: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/pink-customer.png",
+  4: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/green-customer.png"
 };
 var Order = /*#__PURE__*/function () {
   function Order(orderSize, duration) {
@@ -491,10 +526,9 @@ var Order = /*#__PURE__*/function () {
     key: "generateOrder",
     value: function generateOrder() {
       var options = Object.keys(OPTIONS);
-      var numOptions = options.length;
 
       for (var i = 0; i < this.orderSize; i++) {
-        var idx = Math.floor(Math.random() * numOptions);
+        var idx = Math.floor(Math.random() * options.length);
         var random = options[idx];
         this.order.push(random);
       }
@@ -721,19 +755,22 @@ document.addEventListener('DOMContentLoaded', function () {
   var game = new _game__WEBPACK_IMPORTED_MODULE_0__["default"]();
   var start = document.querySelector('.start-btn');
   var restart = document.querySelector('.restart-btn');
-  var volume = document.querySelector('.volume-btn');
-  volume.addEventListener('click', function () {
-    var sounds = document.getElementsByTagName('audio');
-    var soundsArr = Array.from(sounds);
-    volume.classList.toggle('mute');
-    soundsArr.forEach(function (sound) {
-      if (sound.volume > 0) {
-        sound.pause();
-        sound.volume = 0;
-      } else {
-        sound.volume = 0;
-        sound.play();
-      }
+  var volumeList = document.querySelectorAll('.volume-btn');
+  var volumeArr = Array.from(volumeList);
+  volumeArr.forEach(function (volume) {
+    return volume.addEventListener('click', function () {
+      var sounds = document.getElementsByTagName('audio');
+      var soundsArr = Array.from(sounds);
+      volume.classList.toggle('mute');
+      soundsArr.forEach(function (sound) {
+        if (sound.volume > 0) {
+          sound.pause();
+          sound.volume = 0;
+        } else {
+          sound.volume = 0;
+          sound.play();
+        }
+      });
     });
   }); // once the start button is clicked hide the div and begin the game
 
