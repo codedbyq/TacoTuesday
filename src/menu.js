@@ -57,8 +57,8 @@ export class Menu {
 
   createImage(key, imageURL) {
     const img = document.createElement("img");
-    img.src = this.imageURL;
-    img.alt = `${this.key}`;
+    img.src = imageURL;
+    img.alt = `${key}`;
     return img;
   }
 
@@ -72,28 +72,3 @@ export class Menu {
       document.querySelector('gameover').classList.add('hidden');
   }
 }
-
-// export function Menu() {
-//     this.menu = [];
-//     this.generateMenu();
-// }
-
-// Menu.prototype.generateMenu = function() {
-//     const nodeList = document.querySelectorAll('.ingredient');
-//     const nodeArr = Array.from(nodeList);
-//     nodeArr.forEach(node => {
-//         const key = node.id;
-//         console.log(key)
-//         const ingredient = new Ingredient(key, INGREDIENTS[key]);
-//         this.menu.push(ingredient);
-//         node.append(ingredient.render());
-//     });
-// }
-
-// Menu.prototype.deleteMenu = function() {
-//     const menu = document.querySelector('.menu');
-//     const menuImgs = document.getElementsByTagName('img');
-//     menuImgs.forEach(img => img.remove());
-
-//     document.querySelector('gameover').classList.add('hidden');
-// }

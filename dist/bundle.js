@@ -430,8 +430,8 @@ var Menu = /*#__PURE__*/function () {
     key: "createImage",
     value: function createImage(key, imageURL) {
       var img = document.createElement("img");
-      img.src = this.imageURL;
-      img.alt = "".concat(this.key);
+      img.src = imageURL;
+      img.alt = "".concat(key);
       return img;
     } // clear all the image tags attached to the menu so it can be randomized for 
     // the next game
@@ -449,27 +449,7 @@ var Menu = /*#__PURE__*/function () {
   }]);
 
   return Menu;
-}(); // export function Menu() {
-//     this.menu = [];
-//     this.generateMenu();
-// }
-// Menu.prototype.generateMenu = function() {
-//     const nodeList = document.querySelectorAll('.ingredient');
-//     const nodeArr = Array.from(nodeList);
-//     nodeArr.forEach(node => {
-//         const key = node.id;
-//         console.log(key)
-//         const ingredient = new Ingredient(key, INGREDIENTS[key]);
-//         this.menu.push(ingredient);
-//         node.append(ingredient.render());
-//     });
-// }
-// Menu.prototype.deleteMenu = function() {
-//     const menu = document.querySelector('.menu');
-//     const menuImgs = document.getElementsByTagName('img');
-//     menuImgs.forEach(img => img.remove());
-//     document.querySelector('gameover').classList.add('hidden');
-// }
+}();
 
 /***/ }),
 
