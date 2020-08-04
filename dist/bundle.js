@@ -361,13 +361,12 @@ var Game = /*#__PURE__*/function () {
 /*!*********************!*\
   !*** ./src/menu.js ***!
   \*********************/
-/*! exports provided: INGREDIENTS, Ingredient, Menu */
+/*! exports provided: INGREDIENTS, Menu */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INGREDIENTS", function() { return INGREDIENTS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Ingredient", function() { return Ingredient; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Menu", function() { return Menu; });
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -377,38 +376,34 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var INGREDIENTS = {
   // key: image url
-  avacado: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-avacado.PNG",
-  beans: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-beans.png",
-  cheese: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-cheese.png",
-  ham: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-ham.png",
-  onion: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-onion.png",
-  pepper: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-pepper.png",
-  steak: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-steak.png",
-  tomato: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-tomato.png",
-  rice: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/blk-rice.PNG"
-};
-var Ingredient = function Ingredient(key, imageUrl) {
-  // constructor(key, imageURL) {
-  //     this.key = key;
-  //     this.imageURL = imageURL;
-  // }
-  // return an image sprite for the ingredient
-  // render() {
-  //     const img = document.createElement("img");
-  //     img.src = this.imageURL;
-  //     img.alt = `${this.key}`;
-  //     return img;
-  // }
-  var img = document.createElement('img');
-  img.src = imageUrl;
-  img.alt = "".concat(key);
-  return img;
-};
+  avacado: "../assets/ingredients/blk-avacado.PNG",
+  beans: "../assets/ingredients/blk-beans.png",
+  cheese: "../assets/ingredients/blk-cheese.png",
+  ham: "../assets/ingredients/blk-ham.png",
+  onion: "../assets/ingredients/blk-onion.png",
+  pepper: "../assets/ingredients/blk-pepper.png",
+  steak: "../assets/ingredients/blk-steak.png",
+  tomato: "../assets/ingredients/blk-tomato.png",
+  rice: "../assets/ingredients/blk-rice.PNG"
+}; // export class Ingredient {
+//     constructor(key, imageURL) {
+//         this.key = key;
+//         this.imageURL = imageURL;
+//     }
+//     // return an image sprite for the ingredient
+//     createImage() {
+//         const img = document.createElement("img");
+//         img.src = this.imageURL;
+//         img.alt = `${this.key}`;
+//         return img;
+//     }
+// }
+
 var Menu = /*#__PURE__*/function () {
   function Menu() {
     _classCallCheck(this, Menu);
 
-    this.menu = [];
+    // this.menu = [];
     this.generateMenu();
   } // collect a list of node elements with the class .ingredient, then create a
   // new Ingredient instance for each node and add it that to the menu array.
@@ -424,12 +419,20 @@ var Menu = /*#__PURE__*/function () {
       var nodeArr = Array.from(nodeList);
       nodeArr.forEach(function (node) {
         var key = node.id;
-        var ingredient = new Ingredient(key, INGREDIENTS[key]);
 
-        _this.menu.push(ingredient);
+        var ingredient = _this.createImage(key, INGREDIENTS[key]); // this.menu.push(ingredient);
 
-        node.append(ingredient.render());
+
+        node.append(ingredient);
       });
+    }
+  }, {
+    key: "createImage",
+    value: function createImage(key, imageURL) {
+      var img = document.createElement("img");
+      img.src = this.imageURL;
+      img.alt = "".concat(this.key);
+      return img;
     } // clear all the image tags attached to the menu so it can be randomized for 
     // the next game
 
@@ -490,22 +493,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var OPTIONS = {
   // key: image url
-  avacado: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/avacado.PNG",
-  beans: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/beans.png",
-  cheese: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/cheese.png",
-  ham: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/ham.png",
-  onion: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/onion.png",
-  pepper: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/pepper.png",
-  steak: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/steak.png",
-  tomato: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/tomato.png",
-  rice: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/rice.PNG"
+  avacado: "../assets/ingredients/avacado.PNG",
+  beans: "../assets/ingredients/beans.png",
+  cheese: "../assets/ingredients/cheese.png",
+  ham: "../assets/ingredients/ham.png",
+  onion: "../assets/ingredients/onions.png",
+  pepper: "../assets/ingredients/pepper.png",
+  steak: "../assets/ingredients/steak.png",
+  tomato: "../assets/ingredients/tomato.png",
+  rice: "../assets/ingredients/rice.PNG"
 };
 var CUSTOMERS = {
-  0: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/blue-customer.png",
-  1: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/yellow-customer.png",
-  2: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/purple-customer.png",
-  3: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/pink-customer.png",
-  4: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/green-customer.png"
+  // key: image url
+  0: "../assets/characters/blue-customer.png",
+  1: "../assets/characters/green-customer.png",
+  2: "../assets/characters/pink-customer.png",
+  3: "../assets/characters/purple-customer.png",
+  4: "../assets/characters/yellow-customer.png"
 };
 var Order = /*#__PURE__*/function () {
   function Order(orderSize, duration) {

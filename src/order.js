@@ -1,31 +1,37 @@
 export const OPTIONS = {
   // key: image url
   avacado:
-    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/avacado.PNG",
+    "../assets/ingredients/avacado.PNG",
   beans:
-    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/beans.png",
+    "../assets/ingredients/beans.png",
   cheese:
-    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/cheese.png",
+    "../assets/ingredients/cheese.png",
   ham:
-    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/ham.png",
+    "../assets/ingredients/ham.png",
   onion:
-    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/onion.png",
+    "../assets/ingredients/onions.png",
   pepper:
-    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/pepper.png",
+    "../assets/ingredients/pepper.png",
   steak:
-    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/steak.png",
+    "../assets/ingredients/steak.png",
   tomato:
-    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/tomato.png",
+    "../assets/ingredients/tomato.png",
   rice:
-    "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Ingredients/rice.PNG",
+    "../assets/ingredients/rice.PNG"
 };
 
 export const CUSTOMERS = {
-  0: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/blue-customer.png",
-  1: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/yellow-customer.png",
-  2: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/purple-customer.png",
-  3: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/pink-customer.png",
-  4: "https://taco-tuesday.s3-us-west-1.amazonaws.com/taco-tuesday/Customers/green-customer.png",
+  // key: image url
+  0:
+    "../assets/characters/blue-customer.png",
+  1:
+    "../assets/characters/green-customer.png",
+  2:
+    "../assets/characters/pink-customer.png",
+  3:
+    "../assets/characters/purple-customer.png",
+  4:
+    "../assets/characters/yellow-customer.png"
 };
 
 export class Order {
