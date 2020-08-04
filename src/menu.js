@@ -1,23 +1,23 @@
 export const INGREDIENTS = {
   // key: image url
   avacado:
-    "../assets/ingredients/blk-avacado.PNG",
+    "/assets/ingredients/blk-avacado.PNG",
   beans:
-    "../assets/ingredients/blk-beans.png",
+    "/assets/ingredients/blk-beans.png",
   cheese:
-    "../assets/ingredients/blk-cheese.png",
+    "/assets/ingredients/blk-cheese.png",
   ham:
-    "../assets/ingredients/blk-ham.png",
+    "/assets/ingredients/blk-ham.png",
   onion:
-    "../assets/ingredients/blk-onion.png",
+    "/assets/ingredients/blk-onion.png",
   pepper:
-    "../assets/ingredients/blk-pepper.png",
+    "/assets/ingredients/blk-pepper.png",
   steak:
-    "../assets/ingredients/blk-steak.png",
+    "/assets/ingredients/blk-steak.png",
   tomato:
-    "../assets/ingredients/blk-tomato.png",
+    "/assets/ingredients/blk-tomato.png",
   rice:
-    "../assets/ingredients/blk-rice.PNG",
+    "/assets/ingredients/blk-rice.PNG",
 };
 
 // export class Ingredient {
