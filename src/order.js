@@ -1,37 +1,37 @@
 export const OPTIONS = {
   // key: image url
   avacado:
-    "../assets/ingredients/avacado.PNG",
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/avacado.PNG",
   beans:
-    "../assets/ingredients/beans.png",
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/beans.png",
   cheese:
-    "../assets/ingredients/cheese.png",
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/cheese.png",
   ham:
-    "../assets/ingredients/ham.png",
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/ham.png",
   onion:
-    "../assets/ingredients/onions.png",
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/onion.png",
   pepper:
-    "../assets/ingredients/pepper.png",
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/pepper.png",
   steak:
-    "../assets/ingredients/steak.png",
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/steak.png",
   tomato:
-    "../assets/ingredients/tomato.png",
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/tomato.png",
   rice:
-    "../assets/ingredients/rice.PNG"
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/rice.PNG",
 };
 
 export const CUSTOMERS = {
   // key: image url
   0:
-    "../assets/characters/blue-customer.png",
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/Customers/blue-customer.png",
   1:
-    "../assets/characters/green-customer.png",
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/Customers/green-customer.png",
   2:
-    "../assets/characters/pink-customer.png",
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/Customers/pink-customer.png",
   3:
-    "../assets/characters/purple-customer.png",
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/Customers/purple-customer.png",
   4:
-    "../assets/characters/yellow-customer.png"
+    "https://taco-tuesday.s3-us-west-1.amazonaws.com/Customers/yellow-customer.png",
 };
 
 export class Order {

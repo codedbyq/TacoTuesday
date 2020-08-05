@@ -374,17 +374,38 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+// export const INGREDIENTS = {
+//   // key: image url
+//   avacado:
+//     "/assets/ingredients/blk-avacado.PNG",
+//   beans:
+//     "/assets/ingredients/blk-beans.png",
+//   cheese:
+//     "/assets/ingredients/blk-cheese.png",
+//   ham:
+//     "/assets/ingredients/blk-ham.png",
+//   onion:
+//     "/assets/ingredients/blk-onion.png",
+//   pepper:
+//     "/assets/ingredients/blk-pepper.png",
+//   steak:
+//     "/assets/ingredients/blk-steak.png",
+//   tomato:
+//     "/assets/ingredients/blk-tomato.png",
+//   rice:
+//     "/assets/ingredients/blk-rice.PNG",
+// };
 var INGREDIENTS = {
   // key: image url
-  avacado: "/assets/ingredients/blk-avacado.PNG",
-  beans: "/assets/ingredients/blk-beans.png",
-  cheese: "/assets/ingredients/blk-cheese.png",
-  ham: "/assets/ingredients/blk-ham.png",
-  onion: "/assets/ingredients/blk-onion.png",
-  pepper: "/assets/ingredients/blk-pepper.png",
-  steak: "/assets/ingredients/blk-steak.png",
-  tomato: "/assets/ingredients/blk-tomato.png",
-  rice: "/assets/ingredients/blk-rice.PNG"
+  avacado: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/blk-avacado.PNG",
+  beans: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/blk-beans.png",
+  cheese: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/blk-cheese.png",
+  ham: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/blk-ham.png",
+  onion: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/blk-onion.png",
+  pepper: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/blk-pepper.png",
+  steak: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/blk-steak.png",
+  tomato: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/blk-tomato.png",
+  rice: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/blk-rice.PNG"
 }; // export class Ingredient {
 //     constructor(key, imageURL) {
 //         this.key = key;
@@ -473,23 +494,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var OPTIONS = {
   // key: image url
-  avacado: "../assets/ingredients/avacado.PNG",
-  beans: "../assets/ingredients/beans.png",
-  cheese: "../assets/ingredients/cheese.png",
-  ham: "../assets/ingredients/ham.png",
-  onion: "../assets/ingredients/onions.png",
-  pepper: "../assets/ingredients/pepper.png",
-  steak: "../assets/ingredients/steak.png",
-  tomato: "../assets/ingredients/tomato.png",
-  rice: "../assets/ingredients/rice.PNG"
+  avacado: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/avacado.PNG",
+  beans: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/beans.png",
+  cheese: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/cheese.png",
+  ham: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/ham.png",
+  onion: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/onion.png",
+  pepper: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/pepper.png",
+  steak: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/steak.png",
+  tomato: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/tomato.png",
+  rice: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Ingredients/rice.PNG"
 };
 var CUSTOMERS = {
   // key: image url
-  0: "../assets/characters/blue-customer.png",
-  1: "../assets/characters/green-customer.png",
-  2: "../assets/characters/pink-customer.png",
-  3: "../assets/characters/purple-customer.png",
-  4: "../assets/characters/yellow-customer.png"
+  0: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Customers/blue-customer.png",
+  1: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Customers/green-customer.png",
+  2: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Customers/pink-customer.png",
+  3: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Customers/purple-customer.png",
+  4: "https://taco-tuesday.s3-us-west-1.amazonaws.com/Customers/yellow-customer.png"
 };
 var Order = /*#__PURE__*/function () {
   function Order(orderSize, duration) {
