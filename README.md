@@ -19,7 +19,7 @@ Food themed matching game inspired by Lebron James' love for tacos and a JavaScr
   
 ## Features
 
-## Future Changes
+## Future Updates
 * More sound effects
 * Instructions before the game begins
 * Animated customers that walk up to the food truck
