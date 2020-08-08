@@ -17,3 +17,9 @@ Food themed matching game inspired by Lebron James' love for tacos and a JavaScr
 * The game lasts until the player receives 3 strikes.
   * A strike is earned when the player gets a customer's order wrong, or runs out of time for a single order.
   
+## Features
+
+## Future Changes
+* More sound effects
+* Instructions before the game begins
+* Animated customers that walk up to the food truck
