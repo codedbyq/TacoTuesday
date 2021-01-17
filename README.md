@@ -16,8 +16,7 @@ Food themed matching game inspired by Lebron James' love for tacos and another J
 * Within the alloted time you as the player must match their order ingredients as they are shown in their speech bubble. 
 
 ```javascript
-// given the order size, select ingredients at random to create a customer's
-// order
+// given the order size, select ingredients at random to create a customer's order
 generateOrder() {
     const options = Object.keys(OPTIONS);
     for (let i = 0; i < this.orderSize; i++) {
@@ -43,7 +42,7 @@ generateCustomer() {
 <img src="https://taco-tuesday.s3-us-west-1.amazonaws.com/readme/IMG_1346.JPG" width="562.75" height="311.5" />
 
 * The game score is calculated as tips. 
-  * Tip are scored ff the user matches the customer's order within the given time, the remaining seconds as tips. 
+  * Tip are scored if the user matches the customer's order within the given time, the remaining seconds as tips. 
 * The game lasts until the player receives 3 strikes.
   * A strike is earned when the player gets a customer's order wrong, or runs out of time for a single order.
   
